@@ -59,7 +59,7 @@ const Carousel = () => {
                         >
                           {carousel.writers_byline}
                         </p>
-                        <span class="carousel__staff__tooltip">
+                        <span className="carousel__staff__tooltip">
                           {carousel.writers_byline}
                         </span>
                       </div>
@@ -89,7 +89,7 @@ const Carousel = () => {
                         >
                           {carousel.photos_byline}
                         </p>
-                        <span class="carousel__staff__tooltip">
+                        <span className="carousel__staff__tooltip">
                           {carousel.photos_byline}
                         </span>
                       </div>
