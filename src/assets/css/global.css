@@ -5,9 +5,15 @@ body {
   padding: 0;
   box-sizing: border-box;
 
-  background-color: black;
-
   font-family: Chivo, sans-serif;
+}
+
+body {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: stretch;
+
+  min-height: 100vw;
 }
 
 :root {

@@ -1,0 +1,44 @@
+footer {
+  margin-top: auto;
+  border-top: 4px solid var(--dd-green);
+  background: linear-gradient(90deg, #1E3250, #06142E);
+
+  color: white;
+}
+
+footer .content {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  column-gap: 90px;
+
+  padding: 64px 0 40px;
+}
+
+footer .content .logo-desc img {
+  width: 100%;
+  height: auto;
+  margin: 0 0 40px;
+}
+
+footer .content .more {
+  display: flex;
+  flex-flow: column nowrap;
+  row-gap: 12px;
+}
+
+footer .content .more .heading {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+footer .content .more a {
+  text-decoration: none;
+  color: white;
+}
+
+footer .credits {
+  border-top: 1px solid white;
+  padding: 24px;
+
+  text-align: center;
+}
