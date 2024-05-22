@@ -93,14 +93,33 @@ body {
   font-family: "Tiempos Headline", sans-serif;
   font-size: 3rem;
   width: 20ch;
-  margin-bottom: 0.5rem;
+  margin-bottom: -0.4rem;
 }
 
 .carousel__articleActive__info > :nth-child(3) {
   font-family: "Chivo-Regular", sans-serif;
   font-size: 1.1rem;
   width: 60ch;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.carousel__staffs__staff {
+  display: flex;
+}
+
+.carousel__staffNames {
+  font-family: "Chivo-Bold", sans-serif;
+  width: 10rem;
+  font-weight: 600;
+}
+
+.carousel__staff__bylines {
+  font-family: "Chivo-Light", sans-serif;
+  width: 30rem;
+  font-weight: 300;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .carousel__button {
@@ -110,6 +129,7 @@ body {
   color: #fff;
   width: 15rem;
   padding: 0.4rem;
+  margin-top: 1.5rem;
   border-radius: 50px;
   border: none;
   text-decoration: none;

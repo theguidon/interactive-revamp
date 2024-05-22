@@ -33,6 +33,133 @@ const Carousel = () => {
                   <p>FEATURED</p>
                   <p>{carousel.title}</p>
                   <p>{carousel.description}</p>
+                  <section className="carousel__articleActive__staffs">
+                    <section
+                      className="carousel__staffs__staff"
+                      id="carousel__staff__writers"
+                    >
+                      <p
+                        className="carousel__staffNames"
+                        style={
+                          carousel.writers_byline != ""
+                            ? { margin: "0.2rem" }
+                            : { margin: "0" }
+                        }
+                      >
+                        Written by
+                      </p>
+                      <p
+                        className="carousel__staff__bylines"
+                        style={
+                          carousel.writers_byline != ""
+                            ? { margin: "0.2rem" }
+                            : { margin: "0" }
+                        }
+                      >
+                        {carousel.writers_byline}
+                      </p>
+                    </section>
+                    <section
+                      className="carousel__staffs__staff"
+                      id="carousel__staff__photos"
+                    >
+                      <p
+                        className="carousel__staffNames"
+                        style={
+                          carousel.photos_byline != ""
+                            ? { margin: "0.2rem" }
+                            : { margin: "0" }
+                        }
+                      >
+                        Photos by
+                      </p>
+                      <p
+                        className="carousel__staff__bylines"
+                        style={
+                          carousel.photos_byline != ""
+                            ? { margin: "0.2rem" }
+                            : { margin: "0" }
+                        }
+                      >
+                        {carousel.photos_byline}
+                      </p>
+                    </section>
+                    <section
+                      className="carousel__staffs__staff"
+                      id="carousel__staff__videos"
+                    >
+                      <p
+                        className="carousel__staffNames"
+                        style={
+                          carousel.videos_byline != ""
+                            ? { margin: "0.2rem" }
+                            : { margin: "0" }
+                        }
+                      >
+                        {carousel.videos_byline != "" ? "Videos by" : ""}
+                      </p>
+                      <p
+                        className="carousel__staff__bylines"
+                        style={
+                          carousel.videos_byline != ""
+                            ? { margin: "0.2rem" }
+                            : { margin: "0" }
+                        }
+                      >
+                        {carousel.videos_byline}
+                      </p>
+                    </section>
+                    <section
+                      className="carousel__staffs__staff"
+                      id="carousel__staff__illustrations"
+                    >
+                      <p
+                        className="carousel__staffNames"
+                        style={
+                          carousel.graphics_byline != ""
+                            ? { margin: "0.2rem" }
+                            : { margin: "0" }
+                        }
+                      >
+                        Illustrations by
+                      </p>
+                      <p
+                        className="carousel__staff__bylines"
+                        style={
+                          carousel.graphics_byline != ""
+                            ? { margin: "0.2rem" }
+                            : { margin: "0" }
+                        }
+                      >
+                        {carousel.graphics_byline}
+                      </p>
+                    </section>
+                    <section
+                      className="carousel__staffs__staff"
+                      id="carousel__staff__interactives"
+                    >
+                      <p
+                        className="carousel__staffNames"
+                        style={
+                          carousel.interactive_byline != ""
+                            ? { margin: "0.2rem" }
+                            : { margin: "0" }
+                        }
+                      >
+                        Interactive by
+                      </p>
+                      <p
+                        className="carousel__staff__bylines"
+                        style={
+                          carousel.interactive_byline != ""
+                            ? { margin: "0.2rem" }
+                            : { margin: "0" }
+                        }
+                      >
+                        {carousel.interactive_byline}
+                      </p>
+                    </section>
+                  </section>
                   <a href="#" className="carousel__button">
                     See more information
                   </a>
