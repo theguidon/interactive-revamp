@@ -48,16 +48,21 @@ const Carousel = () => {
                       >
                         Written by
                       </p>
-                      <p
-                        className="carousel__staff__bylines"
-                        style={
-                          carousel.writers_byline != ""
-                            ? { margin: "0.2rem" }
-                            : { margin: "0" }
-                        }
-                      >
-                        {carousel.writers_byline}
-                      </p>
+                      <div className="carousel__bylines">
+                        <p
+                          className="carousel__staff__bylines"
+                          style={
+                            carousel.writers_byline != ""
+                              ? { margin: "0.2rem" }
+                              : { margin: "0" }
+                          }
+                        >
+                          {carousel.writers_byline}
+                        </p>
+                        <span class="carousel__staff__tooltip">
+                          {carousel.writers_byline}
+                        </span>
+                      </div>
                     </section>
                     <section
                       className="carousel__staffs__staff"
@@ -73,16 +78,21 @@ const Carousel = () => {
                       >
                         Photos by
                       </p>
-                      <p
-                        className="carousel__staff__bylines"
-                        style={
-                          carousel.photos_byline != ""
-                            ? { margin: "0.2rem" }
-                            : { margin: "0" }
-                        }
-                      >
-                        {carousel.photos_byline}
-                      </p>
+                      <div className="carousel__bylines">
+                        <p
+                          className="carousel__staff__bylines"
+                          style={
+                            carousel.photos_byline != ""
+                              ? { margin: "0.2rem" }
+                              : { margin: "0" }
+                          }
+                        >
+                          {carousel.photos_byline}
+                        </p>
+                        <span class="carousel__staff__tooltip">
+                          {carousel.photos_byline}
+                        </span>
+                      </div>
                     </section>
                     <section
                       className="carousel__staffs__staff"
@@ -98,16 +108,21 @@ const Carousel = () => {
                       >
                         {carousel.videos_byline != "" ? "Videos by" : ""}
                       </p>
-                      <p
-                        className="carousel__staff__bylines"
-                        style={
-                          carousel.videos_byline != ""
-                            ? { margin: "0.2rem" }
-                            : { margin: "0" }
-                        }
-                      >
-                        {carousel.videos_byline}
-                      </p>
+                      <div className="carousel__bylines">
+                        <p
+                          className="carousel__staff__bylines"
+                          style={
+                            carousel.videos_byline != ""
+                              ? { margin: "0.2rem" }
+                              : { margin: "0" }
+                          }
+                        >
+                          {carousel.videos_byline}
+                        </p>
+                        <span className="carousel__staff__tooltip">
+                          {carousel.videos_byline}
+                        </span>
+                      </div>
                     </section>
                     <section
                       className="carousel__staffs__staff"
@@ -123,16 +138,21 @@ const Carousel = () => {
                       >
                         Illustrations by
                       </p>
-                      <p
-                        className="carousel__staff__bylines"
-                        style={
-                          carousel.graphics_byline != ""
-                            ? { margin: "0.2rem" }
-                            : { margin: "0" }
-                        }
-                      >
-                        {carousel.graphics_byline}
-                      </p>
+                      <div className="carousel__bylines">
+                        <p
+                          className="carousel__staff__bylines"
+                          style={
+                            carousel.graphics_byline != ""
+                              ? { margin: "0.2rem" }
+                              : { margin: "0" }
+                          }
+                        >
+                          {carousel.graphics_byline}
+                        </p>
+                        <span className="carousel__staff__tooltip">
+                          {carousel.graphics_byline}
+                        </span>
+                      </div>
                     </section>
                     <section
                       className="carousel__staffs__staff"
@@ -148,16 +168,21 @@ const Carousel = () => {
                       >
                         Interactive by
                       </p>
-                      <p
-                        className="carousel__staff__bylines"
-                        style={
-                          carousel.interactive_byline != ""
-                            ? { margin: "0.2rem" }
-                            : { margin: "0" }
-                        }
-                      >
-                        {carousel.interactive_byline}
-                      </p>
+                      <div className="carousel__bylines">
+                        <p
+                          className="carousel__staff__bylines"
+                          style={
+                            carousel.interactive_byline != ""
+                              ? { margin: "0.2rem" }
+                              : { margin: "0" }
+                          }
+                        >
+                          {carousel.interactive_byline}
+                        </p>
+                        <span className="carousel__staff__tooltip">
+                          {carousel.interactive_byline}
+                        </span>
+                      </div>
                     </section>
                   </section>
                   <a href="#" className="carousel__button">

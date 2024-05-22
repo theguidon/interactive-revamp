@@ -110,16 +110,36 @@ body {
 .carousel__staffNames {
   font-family: "Chivo-Bold", sans-serif;
   width: 10rem;
-  font-weight: 600;
+}
+
+.carousel__bylines {
+  position: relative;
+  width: 30rem;
 }
 
 .carousel__staff__bylines {
   font-family: "Chivo-Light", sans-serif;
-  width: 30rem;
-  font-weight: 300;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  cursor: pointer;
+}
+
+.carousel__staff__tooltip {
+  position: absolute;
+  font-family: "Chivo-Light", sans-serif;
+  color: #fff;
+  z-index: 20;
+  visibility: hidden;
+  width: fit-content;
+  background-color: black;
+  text-align: center;
+  padding: 0.25rem 0.5rem;
+  border-radius: 10px;
+}
+
+.carousel__bylines:hover .carousel__staff__tooltip {
+  visibility: visible;
 }
 
 .carousel__button {
