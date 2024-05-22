@@ -9,3 +9,34 @@ body {
 :root {
   --dd-green: #28B876;
 }
+
+.general-container {
+  padding: 0 56px;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1440px;
+}
+
+@media screen and (max-width: 1200px) {
+  .general-container {
+    padding: 0 44px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .general-container {
+    padding: 0 32px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .general-container {
+    padding: 0 24px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .general-container {
+    padding: 0 16px;
+  }
+}
