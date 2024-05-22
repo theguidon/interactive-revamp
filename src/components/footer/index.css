@@ -1,7 +1,7 @@
 footer {
   margin-top: auto;
   border-top: 4px solid var(--dd-green);
-  background: linear-gradient(90deg, #1E3250, #06142E);
+  background: linear-gradient(90deg, #1e3250, #06142e);
 
   color: white;
 }
@@ -34,6 +34,61 @@ footer .content .more .heading {
 footer .content .more a {
   text-decoration: none;
   color: white;
+}
+
+footer .newsletter-group .subscribe {
+  margin: 0 0 8px;
+}
+
+footer .newsletter-group form {
+  border: 1px solid white;
+  border-radius: 4px;
+  padding-left: 12px;
+  margin: 0 0 24px;
+
+  display: flex;
+  flex-flow: row nowrap;
+  column-gap: 8px;
+  align-items: center;
+}
+
+footer .newsletter-group form input[type="text"] {
+  flex-grow: 1;
+
+  border: none;
+  background-color: transparent;
+
+  color: white;
+}
+
+footer .newsletter-group form input[type="text"]::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+footer .newsletter-group form input[type="text"]:focus {
+  outline: none;
+}
+
+footer .newsletter-group form input[type="submit"] {
+  background-color: white;
+  border: none;
+
+  color: var(--gdn-blue);
+  font-size: var(--body-s-font-size);
+  font-weight: bold;
+
+  padding: 12px 16px;
+}
+
+footer .newsletter-group .social-links {
+  display: flex;
+  flex-flow: row nowrap;
+  column-gap: 8px;
+}
+
+footer .newsletter-group .social-links img {
+  width: 24px;
+  height: 24px;
 }
 
 footer .credits {

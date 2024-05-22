@@ -6,6 +6,8 @@ body {
   box-sizing: border-box;
 
   font-family: Chivo, sans-serif;
+
+  line-height: 140%;
 }
 
 body {
@@ -17,6 +19,7 @@ body {
 }
 
 :root {
+  --gdn-blue: #1C4480;
   --dd-green: #28B876;
 
   --h1-font-size: 64px;
