@@ -2,7 +2,11 @@ import React from "react";
 import "./index.css";
 
 function Footer() {
-  return <footer>FOOTER</footer>;
+  return (
+    <footer>
+      <div className="general-container">FOOTER</div>
+    </footer>
+  );
 }
 
 export default Footer;
