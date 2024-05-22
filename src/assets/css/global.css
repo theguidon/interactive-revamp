@@ -18,6 +18,14 @@ body {
 
 :root {
   --dd-green: #28B876;
+
+  --h1-font-size: 64px;
+  --h2-font-size: 48px;
+
+  --body-l-font-size: 20px;
+  --body-m-font-size: 18px;
+  --body-font-size: 16px;
+  --body-s-font-size: 14px;
 }
 
 .general-container {
