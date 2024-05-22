@@ -5,6 +5,8 @@ Remember to rename your branch to "name/feature".
 
 <hr />
 
+Digital Development Editors A.Y. 2023–2024: Razel Tan and Waleed Lugod
+
 Designed by Juan Lacanienta
 
 Developed by Emman Evangelista (contact@emmanevangelista.com);
