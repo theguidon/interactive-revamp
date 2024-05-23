@@ -186,14 +186,14 @@ const Carousel = () => {
                     <a
                       href="#"
                       className={styles.carouselButton}
-                      id={styles.carouselCredits}
+                      id={styles.carouselInteractive}
                     >
                       View interactive
                     </a>
                     <a
                       href="#"
                       className={styles.carouselButton}
-                      id={styles.carouselInteractive}
+                      id={styles.carouselCredits}
                       onClick={toggleModal}
                     >
                       Show credits
