@@ -38,7 +38,7 @@ function AboutPage() {
       </p>
     </div>
     <div className="c">
-      <button className="explore">Explore the interactives</button>
+      <a className="explore" href="/" target="_blank">Explore the interactives</a>
     </div>
     <div className="d">
       <div className="f">
@@ -60,7 +60,7 @@ function AboutPage() {
         </div>
         <div className="h">
           <img
-            src="/src/assets/images/logos/interactive-longform.svg"
+            src="/src/assets/images/logos/white-base.svg"
             width="240.46"
             height="263.61"
           ></img>

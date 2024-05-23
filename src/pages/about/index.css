@@ -57,11 +57,17 @@
     width: 296px;
     height: 37px;
     border-radius: 20px;
-    font-family: Chivo;
     font-weight: bold;
     font-size: 18;
     color: white;
     border: none;
+    text-align: center;
+    padding: 7px 0;
+    text-decoration: none;
+  }
+
+  .explore:hover, .explore:active {
+    background-color: #5EBC91;
   }
   
   .d{
