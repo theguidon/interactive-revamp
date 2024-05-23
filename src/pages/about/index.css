@@ -3,10 +3,24 @@
     background: linear-gradient(to bottom, #03080f, #163665);
     font-family: Chivo;
   }
+
+  @keyframes fadeInUp {
+    0% { opacity: 0;  transform: translateY(25px);}
+    100% { opacity: 1; transform: translateY(0px);}
+  }
   
   p {
     color:white;
     font-size: 1em;
+  }
+
+  .body {
+    color:white;
+    font-size: 1em;
+  }
+
+  .fadeInUp{
+    animation: fadeInUp 1s;
   }
   
   .about-main-grid {
@@ -19,19 +33,44 @@
     'c'
     'd';
     grid-row-gap: 20px;
+    padding-bottom: 75px;
   }
   
   .a{
+    overflow: hidden;
     display: grid;
     align-self: center;
     justify-items: center;
   }
   
   .these{
+    width: 20%;
+    opacity: 1;
     font-family: Chivo;
     font-size: 2.5em;
     max-width: 70%;
     text-align: center;
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .gallery{
+    background: url("https://picsum.photos/200/300") repeat-x;
+    height: 500px;
+    width: 5076px; /* The image width times 3 */
+    grid-column: 1;
+    grid-row: 1;
+    opacity: 0.2;
+    animation: slide 60s linear infinite;
+  }
+
+  @keyframes slide {
+    0% {
+      transform: translateX(0px);
+    }
+    100% {
+      transform: translateX(-1692px); /* The image width */
+    }
   }
   
   .green-span{
@@ -43,7 +82,6 @@
     width: 75%;
     display: grid;
     align-self: center;
-    justify-items: center;
   }
   
   .c{
@@ -88,6 +126,7 @@
     grid-template-areas: 
     'i'
     'j';
+    grid-row-gap: 25px;
   }
   
   .i{
