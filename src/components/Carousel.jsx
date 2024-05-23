@@ -55,7 +55,7 @@ const Carousel = () => {
                             : { margin: "0" }
                         }
                       >
-                        Written by
+                        {carousel.writers_byline != "" ? "Written by" : ""}
                       </p>
                       <div className={styles.carouselBylinesContainer}>
                         <p
@@ -82,7 +82,7 @@ const Carousel = () => {
                             : { margin: "0" }
                         }
                       >
-                        Photos by
+                        {carousel.photos_byline != "" ? "Photos by" : ""}
                       </p>
                       <div className={styles.carouselBylinesContainer}>
                         <p
@@ -136,7 +136,9 @@ const Carousel = () => {
                             : { margin: "0" }
                         }
                       >
-                        Illustrations by
+                        {carousel.graphics_byline != ""
+                          ? "Illustrations by"
+                          : ""}
                       </p>
                       <div className={styles.carouselBylinesContainer}>
                         <p
@@ -163,7 +165,9 @@ const Carousel = () => {
                             : { margin: "0" }
                         }
                       >
-                        Interactive by
+                        {carousel.interactive_byline != ""
+                          ? "Interactive by"
+                          : ""}
                       </p>
                       <div className={styles.carouselBylinesContainer}>
                         <p
@@ -218,7 +222,9 @@ const Carousel = () => {
                                     : { margin: "0" }
                                 }
                               >
-                                Written by
+                                {carousel.writers_byline != ""
+                                  ? "Written by"
+                                  : ""}
                               </p>
                               <p
                                 className={styles.carouselBylinesContainerModal}
@@ -240,7 +246,9 @@ const Carousel = () => {
                                     : { margin: "0" }
                                 }
                               >
-                                Photos by
+                                {carousel.photos_byline != ""
+                                  ? "Photos by"
+                                  : ""}
                               </p>
                               <p
                                 className={styles.carouselBylinesContainerModal}
@@ -286,7 +294,9 @@ const Carousel = () => {
                                     : { margin: "0" }
                                 }
                               >
-                                Illustrations by
+                                {carousel.graphics_byline != ""
+                                  ? "Illustrations by"
+                                  : ""}
                               </p>
                               <p
                                 className={styles.carouselBylinesContainerModal}
@@ -308,7 +318,9 @@ const Carousel = () => {
                                     : { margin: "0" }
                                 }
                               >
-                                Interactive by
+                                {carousel.interactive_byline != ""
+                                  ? "Interactive by"
+                                  : ""}
                               </p>
                               <p
                                 className={styles.carouselBylinesContainerModal}
