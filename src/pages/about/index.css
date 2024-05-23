@@ -36,7 +36,13 @@
     padding-bottom: 75px;
   }
   
-  .a{
+  .a gallery {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+  }
+
+  .a{  
     overflow: hidden;
     display: grid;
     align-self: center;
@@ -54,7 +60,6 @@
   }
 
   .gallery{
-    object-fit: contain;
     grid-column: 1;
     grid-row: 1;
     opacity: 0.2;
