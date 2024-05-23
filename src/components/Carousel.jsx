@@ -185,9 +185,22 @@ const Carousel = () => {
                       </div>
                     </section>
                   </section>
-                  <a href="#" className="carousel__button">
-                    See more information
-                  </a>
+                  <section className="carousel__articleActive__buttons">
+                    <a
+                      href="#"
+                      className="carousel__button"
+                      id="carousel__button--interactive"
+                    >
+                      View interactive
+                    </a>
+                    <a
+                      href="#"
+                      className="carousel__button"
+                      id="carousel__button--credits"
+                    >
+                      Show credits
+                    </a>
+                  </section>
                 </section>
               </>
             )}
