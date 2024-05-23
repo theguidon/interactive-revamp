@@ -1,12 +1,15 @@
 import React from "react";
+
 import "./index.css";
 import FocusCard from "../../components/focus-card";
+import CarouselHero from "../../components/carousel-hero";
 
 function MainPage() {
   return (
     <>
-      <div id="hero"></div>
-      <main>
+      <CarouselHero />
+
+      <main className="general-container">
         <FocusCard />
       </main>
     </>
