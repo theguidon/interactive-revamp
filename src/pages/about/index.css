@@ -44,7 +44,6 @@
   }
   
   .these{
-    width: 20%;
     opacity: 1;
     font-family: Chivo;
     font-size: 2.5em;
@@ -55,9 +54,7 @@
   }
 
   .gallery{
-    background: url("https://picsum.photos/200/300") repeat-x;
-    height: 500px;
-    width: 5076px; /* The image width times 3 */
+    object-fit: contain;
     grid-column: 1;
     grid-row: 1;
     opacity: 0.2;
