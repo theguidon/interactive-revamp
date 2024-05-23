@@ -35,12 +35,6 @@
     grid-row-gap: 20px;
     padding-bottom: 75px;
   }
-  
-  .a gallery {
-    height: 100%;
-    width: 100%;
-    object-fit: contain;
-  }
 
   .a{  
     overflow: hidden;
@@ -50,10 +44,10 @@
   }
   
   .these{
+    width: 70%;
     opacity: 1;
     font-family: Chivo;
     font-size: 2.5em;
-    max-width: 70%;
     text-align: center;
     grid-column: 1;
     grid-row: 1;
@@ -73,6 +67,12 @@
     100% {
       transform: translateX(-1692px); /* The image width */
     }
+  }
+
+  .a img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
   }
   
   .green-span{
