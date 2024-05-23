@@ -65,7 +65,7 @@
       transform: translateX(0px);
     }
     100% {
-      transform: translateX(-1692px); /* The image width */
+      transform: translateX(-1692px);
     }
   }
 
@@ -150,7 +150,3 @@
     font-weight: bold;
     font-size: 1.6em;
   }
-
-  /* .scrap{
-
-  } */

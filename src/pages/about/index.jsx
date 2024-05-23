@@ -22,25 +22,6 @@ function AboutPage() {
     </div>
     <div className="b">
       <Body />
-      {/* <p>
-        With the changing fortunes of the industry over the past decade, the
-        need for a news publication to have an online presence has never
-        been more relevant.
-      </p>
-      <p>
-        As such, The GUIDON has worked to establish and improve its online
-        platform over the last few years. One product of this modernization,
-        The GUIDON’s interactive articles, are an innovation in
-        storytelling.
-      </p>
-      <p>
-        These multimedia pieces are designed not only to{" "}
-        <span className="green-span">engage</span> and{" "}
-        <span className="green-span">immerse</span> the readers, but also to{" "}
-        <span className="green-span">enrich</span> their understanding of
-        these stories in ways not possible on traditional media.
-      </p>
-      */}
     </div>
     <div className="c">
       <a className="explore fadeInUp" href="/" target="_blank">Explore the interactives</a>
@@ -56,12 +37,6 @@ function AboutPage() {
           </div>
           <div className="j">
             <Body2 />
-            {/* <p>
-              Founded in 1929 by Rev. Frank O’Hara, SJ and first led by
-              Manuel C. Colayco in 1930, it has since been a training ground
-              for countless writers, designers and managers in the practice
-              of responsible journalism.
-            </p> */}
           </div>
         </div>
         <div className="h">
