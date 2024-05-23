@@ -1,6 +1,6 @@
 import { useState } from "react";
 import exitIcon from "../assets/images/ExitModalIcon.png";
-import "../styles/Carousel.css";
+import styles from "../styles/Carousel.module.css";
 
 const json = await fetch("/data.json").then((r) => r.json());
 
@@ -17,9 +17,9 @@ const Carousel = () => {
   };
 
   if (modal) {
-    document.body.classList.add("carousel__activeModal");
+    document.body.classList.add("carouselModalActive");
   } else {
-    document.body.classList.remove("carousel__activeModal");
+    document.body.classList.remove("carouselModalActive");
   }
 
   return (
@@ -29,8 +29,8 @@ const Carousel = () => {
           <section
             className={
               index === current
-                ? "carousel__articleActive"
-                : "carousel__article"
+                ? styles.carouselArticleActive
+                : styles.carouselArticle
             }
           >
             {index === current && (
@@ -38,17 +38,17 @@ const Carousel = () => {
                 <img
                   src={carousel.preview_url}
                   alt={carousel.description}
-                  className="carousel__articleActive__image"
+                  className={styles.carouselImage}
                   onLoad={setTimeout(changeArticle, 7000)}
                 />
-                <section className="carousel__articleActive__info">
+                <section className={styles.carouselInfo}>
                   <p>FEATURED</p>
                   <p>{carousel.title}</p>
                   <p>{carousel.description}</p>
-                  <section className="carousel__articleActive__staffs">
-                    <section className="carousel__staffs__staff">
+                  <section className={styles.carouselStaffs}>
+                    <section className={styles.carouselStaff}>
                       <p
-                        className="carousel__staffNames"
+                        className={styles.carouselStaffNames}
                         style={
                           carousel.writers_byline != ""
                             ? { margin: "0.2rem" }
@@ -57,9 +57,9 @@ const Carousel = () => {
                       >
                         Written by
                       </p>
-                      <div className="carousel__bylines">
+                      <div className={styles.carouselBylinesContainer}>
                         <p
-                          className="carousel__staff__bylines"
+                          className={styles.carouselBylines}
                           style={
                             carousel.writers_byline != ""
                               ? { margin: "0.2rem" }
@@ -68,14 +68,14 @@ const Carousel = () => {
                         >
                           {carousel.writers_byline}
                         </p>
-                        <span className="carousel__staff__tooltip">
+                        <span className={styles.carouselTooltip}>
                           {carousel.writers_byline}
                         </span>
                       </div>
                     </section>
-                    <section className="carousel__staffs__staff">
+                    <section className={styles.carouselStaff}>
                       <p
-                        className="carousel__staffNames"
+                        className={styles.carouselStaffNames}
                         style={
                           carousel.photos_byline != ""
                             ? { margin: "0.2rem" }
@@ -84,9 +84,9 @@ const Carousel = () => {
                       >
                         Photos by
                       </p>
-                      <div className="carousel__bylines">
+                      <div className={styles.carouselBylinesContainer}>
                         <p
-                          className="carousel__staff__bylines"
+                          className={styles.carouselBylines}
                           style={
                             carousel.photos_byline != ""
                               ? { margin: "0.2rem" }
@@ -95,14 +95,14 @@ const Carousel = () => {
                         >
                           {carousel.photos_byline}
                         </p>
-                        <span className="carousel__staff__tooltip">
+                        <span className={styles.carouselTooltip}>
                           {carousel.photos_byline}
                         </span>
                       </div>
                     </section>
-                    <section className="carousel__staffs__staff">
+                    <section className={styles.carouselStaff}>
                       <p
-                        className="carousel__staffNames"
+                        className={styles.carouselStaffNames}
                         style={
                           carousel.videos_byline != ""
                             ? { margin: "0.2rem" }
@@ -111,9 +111,9 @@ const Carousel = () => {
                       >
                         {carousel.videos_byline != "" ? "Videos by" : ""}
                       </p>
-                      <div className="carousel__bylines">
+                      <div className={styles.carouselBylinesContainer}>
                         <p
-                          className="carousel__staff__bylines"
+                          className={styles.carouselBylines}
                           style={
                             carousel.videos_byline != ""
                               ? { margin: "0.2rem" }
@@ -122,14 +122,14 @@ const Carousel = () => {
                         >
                           {carousel.videos_byline}
                         </p>
-                        <span className="carousel__staff__tooltip">
+                        <span className={styles.carouselTooltip}>
                           {carousel.videos_byline}
                         </span>
                       </div>
                     </section>
-                    <section className="carousel__staffs__staff">
+                    <section className={styles.carouselStaff}>
                       <p
-                        className="carousel__staffNames"
+                        className={styles.carouselStaffNames}
                         style={
                           carousel.graphics_byline != ""
                             ? { margin: "0.2rem" }
@@ -138,9 +138,9 @@ const Carousel = () => {
                       >
                         Illustrations by
                       </p>
-                      <div className="carousel__bylines">
+                      <div className={styles.carouselBylinesContainer}>
                         <p
-                          className="carousel__staff__bylines"
+                          className={styles.carouselBylines}
                           style={
                             carousel.graphics_byline != ""
                               ? { margin: "0.2rem" }
@@ -149,14 +149,14 @@ const Carousel = () => {
                         >
                           {carousel.graphics_byline}
                         </p>
-                        <span className="carousel__staff__tooltip">
+                        <span className={styles.carouselTooltip}>
                           {carousel.graphics_byline}
                         </span>
                       </div>
                     </section>
-                    <section className="carousel__staffs__staff">
+                    <section className={styles.carouselStaff}>
                       <p
-                        className="carousel__staffNames"
+                        className={styles.carouselStaffNames}
                         style={
                           carousel.interactive_byline != ""
                             ? { margin: "0.2rem" }
@@ -165,9 +165,9 @@ const Carousel = () => {
                       >
                         Interactive by
                       </p>
-                      <div className="carousel__bylines">
+                      <div className={styles.carouselBylinesContainer}>
                         <p
-                          className="carousel__staff__bylines"
+                          className={styles.carouselBylines}
                           style={
                             carousel.interactive_byline != ""
                               ? { margin: "0.2rem" }
@@ -176,37 +176,42 @@ const Carousel = () => {
                         >
                           {carousel.interactive_byline}
                         </p>
-                        <span className="carousel__staff__tooltip">
+                        <span className={styles.carouselTooltip}>
                           {carousel.interactive_byline}
                         </span>
                       </div>
                     </section>
                   </section>
-                  <section className="carousel__articleActive__buttons">
+                  <section className={styles.carouselButtons}>
                     <a
                       href="#"
-                      className="carousel__button"
-                      id="carousel__button--interactive"
+                      className={styles.carouselButton}
+                      id={styles.carouselCredits}
                     >
                       View interactive
                     </a>
                     <a
                       href="#"
-                      className="carousel__button"
-                      id="carousel__button--credits"
+                      className={styles.carouselButton}
+                      id={styles.carouselInteractive}
                       onClick={toggleModal}
                     >
                       Show credits
                     </a>
                     {modal && (
-                      <section className="carousel__modal">
-                        <div onClick={toggleModal} className="overlay"></div>
-                        <section className="carousel__modalContent">
-                          <h2>{carousel.title}</h2>
-                          <section className="carousel__staffs--modal">
-                            <section className="carousel__staff--modal">
+                      <section className={styles.carouselModal}>
+                        <div
+                          onClick={toggleModal}
+                          className={styles.overlay}
+                        ></div>
+                        <section className={styles.carouselModalContent}>
+                          <p className={styles.carouselModalTitle}>
+                            {carousel.title}
+                          </p>
+                          <section className={styles.carouselStaffsModal}>
+                            <section className={styles.carouselStaffModal}>
                               <p
-                                className="carousel__staffNames--modal"
+                                className={styles.carouselStaffNamesModal}
                                 style={
                                   carousel.writers_byline != ""
                                     ? { margin: "0.2rem" }
@@ -216,7 +221,7 @@ const Carousel = () => {
                                 Written by
                               </p>
                               <p
-                                className="carousel__bylines--modal"
+                                className={styles.carouselBylinesContainerModal}
                                 style={
                                   carousel.writers_byline != ""
                                     ? { margin: "0.2rem" }
@@ -226,9 +231,9 @@ const Carousel = () => {
                                 {carousel.writers_byline}
                               </p>
                             </section>
-                            <section className="carousel__staff--modal">
+                            <section className={styles.carouselStaffModal}>
                               <p
-                                className="carousel__staffNames--modal"
+                                className={styles.carouselStaffNamesModal}
                                 style={
                                   carousel.photos_byline != ""
                                     ? { margin: "0.2rem" }
@@ -238,7 +243,7 @@ const Carousel = () => {
                                 Photos by
                               </p>
                               <p
-                                className="carousel__bylines--modal"
+                                className={styles.carouselBylinesContainerModal}
                                 style={
                                   carousel.photos_byline != ""
                                     ? { margin: "0.2rem" }
@@ -248,9 +253,9 @@ const Carousel = () => {
                                 {carousel.photos_byline}
                               </p>
                             </section>
-                            <section className="carousel__staff--modal">
+                            <section className={styles.carouselStaffModal}>
                               <p
-                                className="carousel__staffNames--modal"
+                                className={styles.carouselStaffNamesModal}
                                 style={
                                   carousel.videos_byline != ""
                                     ? { margin: "0.2rem" }
@@ -262,7 +267,7 @@ const Carousel = () => {
                                   : ""}
                               </p>
                               <p
-                                className="carousel__bylines--modal"
+                                className={styles.carouselBylinesContainerModal}
                                 style={
                                   carousel.videos_byline != ""
                                     ? { margin: "0.2rem" }
@@ -272,9 +277,9 @@ const Carousel = () => {
                                 {carousel.videos_byline}
                               </p>
                             </section>
-                            <section className="carousel__staff--modal">
+                            <section className={styles.carouselStaffModal}>
                               <p
-                                className="carousel__staffNames--modal"
+                                className={styles.carouselStaffNamesModal}
                                 style={
                                   carousel.graphics_byline != ""
                                     ? { margin: "0.2rem" }
@@ -284,7 +289,7 @@ const Carousel = () => {
                                 Illustrations by
                               </p>
                               <p
-                                className="carousel__bylines--modal"
+                                className={styles.carouselBylinesContainerModal}
                                 style={
                                   carousel.graphics_byline != ""
                                     ? { margin: "0.2rem" }
@@ -294,9 +299,9 @@ const Carousel = () => {
                                 {carousel.graphics_byline}
                               </p>
                             </section>
-                            <section className="carousel__staff--modal">
+                            <section className={styles.carouselStaffModal}>
                               <p
-                                className="carousel__staffNames--modal"
+                                className={styles.carouselStaffNamesModal}
                                 style={
                                   carousel.interactive_byline != ""
                                     ? { margin: "0.2rem" }
@@ -306,7 +311,7 @@ const Carousel = () => {
                                 Interactive by
                               </p>
                               <p
-                                className="carousel__bylines--modal"
+                                className={styles.carouselBylinesContainerModal}
                                 style={
                                   carousel.interactive_byline != ""
                                     ? { margin: "0.2rem" }
@@ -318,7 +323,7 @@ const Carousel = () => {
                             </section>
                           </section>
                           <button
-                            className="carousel__closeModal"
+                            className={styles.carouselCloseModal}
                             onClick={toggleModal}
                           >
                             <img src={exitIcon} alt="Exit Modal" />

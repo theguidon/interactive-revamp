@@ -36,7 +36,7 @@ body {
   height: 100vh;
 }
 
-.carousel__articleActive::before {
+.carouselArticleActive::before {
   content: "";
   z-index: 10;
   width: 100%;
@@ -52,7 +52,7 @@ body {
   );
 }
 
-.carousel__articleActive__image {
+.carouselImage {
   position: absolute;
   z-index: 0;
   width: 100%;
@@ -62,7 +62,7 @@ body {
   animation: 2s ease-in-out fade;
 }
 
-.carousel__articleActive__info {
+.carouselInfo {
   position: absolute;
   z-index: 10;
   left: 7rem;
@@ -72,12 +72,12 @@ body {
   justify-content: center;
 }
 
-.carousel__articleActive__info p {
+.carouselInfo p {
   color: #fff;
   animation: 2s ease-in-out slide-in;
 }
 
-.carousel__articleActive__info > :nth-child(1) {
+.carouselInfo > :nth-child(1) {
   font-family: "Chivo-Bold", sans-serif;
   color: #1c4480;
   background-color: #fff;
@@ -90,21 +90,21 @@ body {
   border-radius: 50px;
 }
 
-.carousel__articleActive__info > :nth-child(2) {
+.carouselInfo > :nth-child(2) {
   font-family: "Tiempos Headline", sans-serif;
   font-size: 3rem;
   width: 20ch;
   margin-bottom: 0;
 }
 
-.carousel__articleActive__info > :nth-child(3) {
+.carouselInfo > :nth-child(3) {
   font-family: "Chivo-Regular", sans-serif;
   font-size: 1.1rem;
   width: 60ch;
   margin-bottom: 1.5rem;
 }
 
-.carousel__articleActive__staffs {
+.carouselStaffs {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -113,22 +113,22 @@ body {
   visibility: visible;
 }
 
-.carousel__staffs__staff {
+.carouselStaff {
   display: flex;
 }
 
-.carousel__staffNames {
+.carouselStaffNames {
   font-family: "Chivo-Bold", sans-serif;
   width: 9rem;
 }
 
-.carousel__bylines {
+.carouselBylinesContainer {
   position: relative;
   width: 30rem;
   font-size: 1rem;
 }
 
-.carousel__staff__bylines {
+.carouselBylines {
   font-family: "Chivo-Light", sans-serif;
   overflow: hidden;
   white-space: nowrap;
@@ -136,7 +136,7 @@ body {
   cursor: pointer;
 }
 
-.carousel__staff__tooltip {
+.carouselTooltip {
   position: absolute;
   font-family: "Chivo-Light", sans-serif;
   color: #fff;
@@ -149,15 +149,15 @@ body {
   border-radius: 10px;
 }
 
-.carousel__bylines:hover .carousel__staff__tooltip {
+.carouselBylinesContainer:hover .carouselTooltip {
   visibility: visible;
 }
 
-.carousel__articleActive__buttons {
+.carouselButtons {
   margin: 0;
 }
 
-.carousel__button {
+.carouselButton {
   display: block;
   text-align: center;
   font-family: "Chivo-Bold", sans-serif;
@@ -170,23 +170,23 @@ body {
   animation: 2s ease-in-out slide-in;
 }
 
-#carousel__button--credits {
+#carouselCredits {
   display: none;
   border: 2px solid #fff;
   text-decoration: none;
 }
 
-#carousel__button--interactive {
+#carouselInteractive {
   border: none;
   text-decoration: none;
   background-color: #28b876;
 }
 
-body.carousel__activeModal {
+body.carouselModalActive {
   overflow-y: hidden;
 }
 
-.carousel__modal,
+.carouselModal,
 .overlay {
   width: 100vw;
   height: 100vh;
@@ -201,7 +201,7 @@ body.carousel__activeModal {
   background: rgba(49, 49, 49, 0.8);
 }
 
-.carousel__modalContent {
+.carouselModalContent {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -218,13 +218,13 @@ body.carousel__activeModal {
   );
 }
 
-.carousel__modalContent h2 {
+.carouselModalTitle {
   font-family: "Tiempos Headline", sans-serif;
   color: #fff;
   font-size: 1.5rem;
 }
 
-.carousel__closeModal {
+.carouselCloseModal {
   position: absolute;
   top: 15px;
   right: 10px;
@@ -234,7 +234,7 @@ body.carousel__activeModal {
   cursor: pointer;
 }
 
-.carousel__staffs--modal {
+.carouselStaffsModal {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -243,16 +243,16 @@ body.carousel__activeModal {
   visibility: visible;
 }
 
-.carousel__staff--modal {
+.carouselStaffModal {
   display: flex;
 }
 
-.carousel__staffNames--modal {
+.carouselStaffNamesModal {
   font-family: "Chivo-Bold", sans-serif;
   min-width: 8rem;
 }
 
-.carousel__bylines--modal {
+.carouselBylinesContainerModal {
   font-family: "Chivo-Light", sans-serif;
   min-width: 8rem;
 }
@@ -280,7 +280,7 @@ body.carousel__activeModal {
 }
 
 @media (max-width: 1100px) {
-  .carousel__articleActive::before {
+  .carouselArticleActive::before {
     content: "";
     z-index: 10;
     width: 100%;
@@ -298,13 +298,13 @@ body.carousel__activeModal {
 }
 
 @media (max-width: 800px) {
-  .carousel__articleActive__info {
+  .carouselInfo {
     left: 0;
     width: 100vw;
     align-items: center;
   }
 
-  .carousel__articleActive::before {
+  .carouselArticleActive::before {
     background-image: linear-gradient(
       to top,
       rgba(6, 26, 57, 1),
@@ -314,47 +314,47 @@ body.carousel__activeModal {
     );
   }
 
-  .carousel__articleActive__info > :nth-child(1) {
+  .carouselInfo > :nth-child(1) {
     margin-bottom: -0.5rem;
     text-align: center;
   }
 
-  .carousel__articleActive__info > :nth-child(2) {
+  .carouselInfo > :nth-child(2) {
     font-size: 2.8rem;
     margin-bottom: 0.5rem;
     width: 15ch;
     text-align: center;
   }
 
-  .carousel__articleActive__info > :nth-child(3) {
+  .carouselInfo > :nth-child(3) {
     font-size: 1.08rem;
     width: 35ch;
     margin-bottom: 1.7rem;
     text-align: center;
   }
 
-  .carousel__articleActive__staffs {
+  .carouselStaffs {
     display: block;
   }
 
-  .carousel__bylines {
+  .carouselBylinesContainer {
     position: relative;
     width: 30ch;
   }
 
-  #carousel__button--credits {
+  #carouselCredits {
     display: none;
   }
 }
 
 @media (max-width: 500px) {
-  .carousel__articleActive__info {
+  .carouselInfo {
     left: 0;
     width: 100vw;
     align-items: center;
   }
 
-  .carousel__articleActive::before {
+  .carouselArticleActive::before {
     background-image: linear-gradient(
       to top,
       rgba(6, 26, 57, 1),
@@ -364,28 +364,28 @@ body.carousel__activeModal {
     );
   }
 
-  .carousel__articleActive__info > :nth-child(1) {
+  .carouselInfo > :nth-child(1) {
     margin-bottom: 0;
     text-align: center;
   }
 
-  .carousel__articleActive__info > :nth-child(2) {
+  .carouselInfo > :nth-child(2) {
     font-size: 2.6rem;
     width: 11ch;
     text-align: center;
   }
 
-  .carousel__articleActive__info > :nth-child(3) {
+  .carouselInfo > :nth-child(3) {
     font-size: 1rem;
     width: 31ch;
     text-align: center;
   }
 
-  .carousel__articleActive__staffs {
+  .carouselStaffs {
     display: none;
   }
 
-  #carousel__button--credits {
+  #carouselCredits {
     display: block;
   }
 }
