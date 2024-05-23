@@ -17,13 +17,13 @@ const Carousel = () => {
   };
 
   if (modal) {
-    document.body.classList.add("carouselModalActive");
+    document.body.classList.add(styles.carouselModalActive);
   } else {
-    document.body.classList.remove("carouselModalActive");
+    document.body.classList.remove(styles.carouselModalActive);
   }
 
   return (
-    <header className="carousel">
+    <section className="carousel">
       {json.map((carousel, index) => {
         return (
           <section
@@ -338,7 +338,7 @@ const Carousel = () => {
           </section>
         );
       })}
-    </header>
+    </section>
   );
 };
 
