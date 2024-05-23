@@ -27,14 +27,12 @@ function AboutPage() {
         need for a news publication to have an online presence has never
         been more relevant.
       </p>
-      <br></br>
       <p>
         As such, The GUIDON has worked to establish and improve its online
         platform over the last few years. One product of this modernization,
         The GUIDON’s interactive articles, are an innovation in
         storytelling.
       </p>
-      <br></br>
       <p>
         These multimedia pieces are designed not only to{" "}
         <span className="green-span">engage</span> and{" "}
@@ -42,7 +40,7 @@ function AboutPage() {
         <span className="green-span">enrich</span> their understanding of
         these stories in ways not possible on traditional media.
       </p>
-      <br></br> */}
+      */}
     </div>
     <div className="c">
       <a className="explore fadeInUp" href="/" target="_blank">Explore the interactives</a>
