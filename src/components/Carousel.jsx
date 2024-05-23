@@ -1,5 +1,5 @@
 import { useState } from "react";
-import exitIcon from "../assets/images/ExitModalIcon.png";
+import ExitModalIcon from "../assets/images/ExitModalIcon.svg";
 import styles from "../styles/Carousel.module.css";
 
 const json = await fetch("/data.json").then((r) => r.json());
@@ -326,7 +326,7 @@ const Carousel = () => {
                             className={styles.carouselCloseModal}
                             onClick={toggleModal}
                           >
-                            <img src={exitIcon} alt="Exit Modal" />
+                            <img src={ExitModalIcon} alt="Exit Modal" />
                           </button>
                         </section>
                       </section>
