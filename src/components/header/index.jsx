@@ -1,6 +1,6 @@
 import React from "react";
 import "./index.css";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 import logo from "./../../assets/images/logos/interactive-longform.svg";
 
@@ -13,8 +13,8 @@ function Header() {
         </Link>
 
         <nav>
-          <Link to="/">Home</Link>
-          <Link to="/about">About</Link>
+          <NavLink to="/">Home</NavLink>
+          <NavLink to="/about">About</NavLink>
         </nav>
       </div>
     </header>

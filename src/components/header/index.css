@@ -1,5 +1,17 @@
 header {
-  padding: 32px 0;
+  padding: 8px 0;
+  height: var(--header-height);
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+
+  z-index: 20;
 }
 
 header .general-container {
@@ -24,4 +36,10 @@ header nav {
 header nav a {
   color: white;
   text-decoration: none;
+}
+
+header nav a.active {
+  font-weight: bold;
+  text-decoration: underline 2px solid white;
+  text-underline-offset: 6px;
 }

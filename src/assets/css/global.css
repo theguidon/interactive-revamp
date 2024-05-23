@@ -8,19 +8,27 @@ body {
   font-family: Chivo, sans-serif;
 
   line-height: 140%;
+
+  --header-height: 100px;
 }
 
 body {
+  background: linear-gradient(180deg, #000000, #1c4480);
+}
+
+#root {
   display: flex;
   flex-flow: column nowrap;
   justify-content: stretch;
 
-  min-height: 100vw;
+  min-height: 100vh;
+
+  padding-top: var(--header-height);
 }
 
 :root {
-  --gdn-blue: #1C4480;
-  --dd-green: #28B876;
+  --gdn-blue: #1c4480;
+  --dd-green: #28b876;
 
   --h1-font-size: 64px;
   --h2-font-size: 48px;
