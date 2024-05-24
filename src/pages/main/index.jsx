@@ -18,15 +18,20 @@ function MainPage() {
         <div className="articles-grid">
           {articles.isReady ? (
             articles.data.map((article) => (
-              <ArticleCard
-                article={article}
-                key={`article-${article.slug}`}
-                onCardClick={() => {
-                  if (selected !== article.slug) setSelected(article.slug);
-                  else setSelected(null);
-                }}
-                active={selected === article.slug}
-              />
+              <React.Fragment key={`article-${article.slug}`}>
+                <ArticleCard
+                  article={article}
+                  onCardClick={() => {
+                    if (selected !== article.slug) setSelected(article.slug);
+                    else setSelected(null);
+                  }}
+                  active={selected === article.slug}
+                />
+
+                {/* {selected && selected === article.slug && (
+                  <FocusCard article={article} />
+                )} */}
+              </React.Fragment>
             ))
           ) : (
             <></>
