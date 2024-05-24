@@ -5,9 +5,13 @@
   width: 100%;
 
   position: relative;
+
+  display: flex;
+  flex-flow: column nowrap;
 }
 
 #home #hero .articles {
+  flex-grow: 1;
   display: grid;
   grid-template-columns: repeat(3, 100%);
   align-items: end;
