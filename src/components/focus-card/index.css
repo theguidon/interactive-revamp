@@ -154,6 +154,8 @@
 
   .focus-card .content .gradient-tint {
     border-radius: 8px;
+
+    background: linear-gradient(to right, #001e4be8 60%, #00153400 130%);
   }
 
   .focus-card .content .title {
