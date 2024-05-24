@@ -68,8 +68,10 @@
 }
 
 #home #hero .articles .panel .title {
+  font-family: "Tiempos Headline";
   width: 60%;
   margin: 0 0 24px;
+  line-height: 100%;
 }
 
 #home #hero .articles .panel .desc {
