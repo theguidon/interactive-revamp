@@ -45,24 +45,24 @@
   z-index: 6;
 }
 
-.focus-card .heading {
+.focus-card .content .heading {
   margin-left: 1rem;
 }
 
-.focus-card .title {
+.focus-card .content .title {
   font-family: "Tiempos Headline";
   width: 75%;
   margin: 0 0 20px;
   line-height: 120%;
 }
 
-.focus-card .date {
+.focus-card .content .date {
   color: #ffffffb2;
 
   margin: 0 0 8px;
 }
 
-.focus-card .desc {
+.focus-card .content .desc {
   font-size: var(--body-m-font-size);
 
   width: 60%;
@@ -121,9 +121,23 @@
 }
 
 @media screen and (max-width: 1200px) {
+  .focus-card .content {
+    padding: 48px;
+  }
+
+  .focus-card .footer {
+    padding: 48px;
+  }
 }
 
 @media screen and (max-width: 992px) {
+  .focus-card .content {
+    padding: 40px;
+  }
+
+  .focus-card .footer {
+    padding: 40px;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -134,6 +148,23 @@
 
   .focus-card.focus-2 {
     display: block;
+  }
+
+  .focus-card .content {
+    padding: 32px;
+  }
+
+  .focus-card .content .title {
+    width: 75%;
+  }
+
+  .focus-card .content .desc {
+    width: 75%;
+  }
+
+  .focus-card .footer {
+    padding: 32px;
+    grid-template-columns: max-content 1fr;
   }
 }
 
@@ -154,7 +185,7 @@
 
   .focus-card .content {
     border-radius: 8px;
-    padding: 24px 12px 12px;
+    padding: 24px 16px 16px;
   }
 
   .focus-card .content .gradient-tint {
@@ -219,5 +250,7 @@
 
   .focus-card .footer {
     display: none;
+
+    padding: 16px 24px 40px;
   }
 }
