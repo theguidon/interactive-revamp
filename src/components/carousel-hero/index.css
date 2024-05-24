@@ -1,0 +1,145 @@
+#home #hero {
+  background-color: blue;
+
+  display: grid;
+  grid-template-columns: repeat(3, 100%);
+  align-items: end;
+
+  min-height: 640px;
+  width: 100%;
+  overflow-x: auto;
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  position: relative;
+}
+
+#home #hero::-webkit-scrollbar {
+  display: none;
+}
+
+#home #hero.snap {
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+}
+
+#home #hero .panel {
+  scroll-snap-align: start;
+  width: 100%;
+  height: 100%;
+  padding: 100px 0 80px;
+  /* padding: 100px 0 56px; */
+
+  background-size: cover !important;
+  background-position: center !important;
+
+  color: white;
+
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-end;
+}
+
+#home #hero .buttons {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 24px;
+
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  column-gap: 8px;
+}
+
+#home #hero .panel .general-container {
+  padding: 0 100px;
+}
+
+#home #hero .panel .featured {
+  font-size: var(--body-s-font-size);
+  text-transform: uppercase;
+  color: var(--gdn-blue);
+  font-weight: bold;
+
+  padding: 2px 16px;
+  border-radius: 16px;
+  background-color: white;
+  width: fit-content;
+  margin: 0 0 24px;
+}
+
+#home #hero .panel .title {
+  width: 60%;
+  margin: 0 0 24px;
+}
+
+#home #hero .panel .desc {
+  width: 60%;
+  margin: 0 0 16px;
+}
+
+#home #hero .panel .bylines {
+  width: 40%;
+
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  column-gap: 24px;
+  row-gap: 8px;
+  margin: 0 0 32px;
+}
+
+#home #hero .panel .bylines .key {
+  font-weight: bold;
+}
+
+#home #hero .panel .bylines .value {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+}
+
+#home #hero .panel .links {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  column-gap: 32px;
+}
+
+#home #hero .panel .links .view {
+  color: white;
+  text-decoration: none;
+  font-size: var(--body-m-font-size);
+  font-weight: bold;
+
+  padding: 8px 80px;
+  background-color: var(--dd-green);
+  border-radius: 40px;
+}
+
+#home #hero .panel .links .socials {
+  display: flex;
+  flex-flow: row nowrap;
+  column-gap: 12px;
+}
+
+#home #hero .buttons button.circle {
+  width: 40px;
+  height: 8px;
+  border-radius: 4px;
+  border: none;
+
+  background-color: white;
+  opacity: 0.5;
+  transition: 0.3s;
+
+  cursor: pointer;
+}
+
+#home #hero .buttons button.circle.active {
+  opacity: 1;
+}

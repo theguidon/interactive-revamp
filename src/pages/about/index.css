@@ -1,17 +1,17 @@
-.general-container {
+#about .general-container {
   padding: 0 180px;
 }
 
-#hero {
+#about #hero {
   /* background-color: black; */
   min-height: 640px;
 }
 
-.hl {
+#about .hl {
   color: var(--dd-green);
 }
 
-#hero {
+#about #hero {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
@@ -20,7 +20,7 @@
   position: relative;
 }
 
-#hero .bg-tint {
+#about #hero .bg-tint {
   position: absolute;
   top: 0;
   left: 0;
@@ -40,11 +40,11 @@
   );
 }
 
-#hero .general-container {
+#about #hero .general-container {
   z-index: 6;
 }
 
-#hero p {
+#about #hero p {
   font-size: 40px;
   font-weight: bold;
   text-align: center;
@@ -54,20 +54,20 @@
   margin: 0 auto;
 }
 
-#writeup p {
+#about #writeup p {
   color: white;
   font-size: var(--body-l-font-size);
 }
 
-#writeup .hl {
+#about #writeup .hl {
   font-weight: bold;
 }
 
-#writeup p:not(:last-child) {
+#about #writeup p:not(:last-child) {
   margin: 0 0 40px;
 }
 
-.explore {
+#about .explore {
   display: block;
   width: fit-content;
   padding: 8px 40px;
@@ -81,7 +81,7 @@
   text-decoration: none;
 }
 
-#guidon {
+#about #guidon {
   display: grid;
   grid-template-columns: 3fr auto;
   column-gap: 80px;
@@ -91,14 +91,14 @@
   padding-bottom: 80px;
 }
 
-#guidon .official {
+#about #guidon .official {
   font-size: 32px;
   font-weight: bold;
 
   margin: 0 0 24px;
 }
 
-#guidon .logo {
+#about #guidon .logo {
   width: 100%;
   height: auto;
   max-width: 200px;

@@ -12,6 +12,13 @@ header {
   justify-content: center;
 
   z-index: 20;
+
+  /* background: linear-gradient(
+    180deg,
+    #001d49bf 0%,
+    #0028545e 60%,
+    #01225300 100%
+  ); */
 }
 
 header .general-container {

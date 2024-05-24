@@ -6,13 +6,13 @@ import CarouselHero from "../../components/carousel-hero";
 
 function MainPage() {
   return (
-    <>
+    <div id="home">
       <CarouselHero />
 
       <main className="general-container">
         <FocusCard />
       </main>
-    </>
+    </div>
   );
 }
 

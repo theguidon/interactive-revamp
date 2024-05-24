@@ -6,7 +6,7 @@ import logo from "./../../assets/images/logos/base-white.svg";
 
 function AboutPage() {
   return (
-    <>
+    <div id="about">
       <div id="hero">
         {/* bg images */}
 
@@ -68,7 +68,7 @@ function AboutPage() {
 
         <img className="logo" src={logo} />
       </div>
-    </>
+    </div>
   );
 }
 
