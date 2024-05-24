@@ -14,11 +14,19 @@ function MainPage() {
       <CarouselHero />
 
       <main className="general-container">
-        {!articles.isLoading && !articles.isError && (
-          <ArticleCard article={articles.data[0]} />
-        )}
+        <div className="articles-grid">
+          {!articles.isLoading && !articles.isError && (
+            <ArticleCard article={articles.data[0]} />
+          )}{" "}
+          {!articles.isLoading && !articles.isError && (
+            <ArticleCard article={articles.data[1]} />
+          )}{" "}
+          {!articles.isLoading && !articles.isError && (
+            <ArticleCard article={articles.data[2]} />
+          )}
+        </div>
 
-        <FocusCard />
+        {/* <FocusCard /> */}
       </main>
     </div>
   );

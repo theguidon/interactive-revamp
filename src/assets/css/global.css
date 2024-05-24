@@ -56,6 +56,13 @@ h2 {
   white-space: nowrap;
 }
 
+.articles-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 24px;
+  row-gap: 40px;
+}
+
 @media screen and (max-width: 1200px) {
   .general-container {
     padding: 0 44px;
@@ -87,5 +94,10 @@ h2 {
 
   .general-container {
     padding: 0 16px;
+  }
+
+  .articles-grid {
+    grid-template-columns: 1fr;
+    row-gap: 16px;
   }
 }
