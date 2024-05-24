@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./index.css";
 
 import sample from "./../../assets/images/sample.png";
@@ -42,6 +42,34 @@ function CarouselHero() {
       ],
     },
     {
+      title: "Year End Gallery 2023",
+      desc: "As academic year 2022-2023 has come to an end, The GUIDON invites you to look back on the various events experienced by the Ateneo in the last year.",
+      path: "/2023/05/year-end-gallery",
+      cover:
+        "https://interactive.theguidon.com/2023/05/year-end-gallery/thumbnail.png",
+      preview:
+        "https://interactive.theguidon.com/2023/05/year-end-gallery/thumbnail.png",
+      bylines: [
+        {
+          key: "Written by",
+          value: "The Photos Staff",
+        },
+        {
+          key: "Photos by",
+          value:
+            "Miguel Abad, Stella Arenas, Jhanine Caoile, Karl Dimaculangan, Elly Kim, Soleil Nicolette, Mikyla Reyes, Patrick Reyes-Santos, Jillian C. Santos, Paulina Singh, Daryl D. Sy, France Vicente, and Vionna Villalon",
+        },
+        {
+          key: "Designed by",
+          value: "Emman Evangelista",
+        },
+        {
+          key: "Developed by",
+          value: "Emman Evangelista and Waleed Lugod",
+        },
+      ],
+    },
+    {
       title: "Dead End: The Commuter Experience",
       desc: "Dead End is a project by the Features, Photos, Video Production, and Digital Development Staffs of AY 2022–2023.",
       path: "/2023/05/dead-end",
@@ -78,15 +106,35 @@ function CarouselHero() {
   ];
 
   const [panelIndex, setPanelIndex] = useState(0);
+  const hero = useRef(null);
+  const panels = useRef([]);
 
-  const setPanel = (idx) => {};
+  useEffect(() => {
+    if (hero) {
+      let cur = panels.current[panelIndex];
+      let panel_bcr = cur.getBoundingClientRect();
+
+      hero.current.scrollTo(
+        panel_bcr.left - panels.current[0].getBoundingClientRect().left,
+        0
+      );
+    }
+
+    const interval = setInterval(() => {
+      setPanelIndex((prev) => (prev + 1 >= data.length ? 0 : prev + 1));
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [panelIndex]);
 
   return (
-    <div id="hero" className="snap">
+    <div id="hero" className="snap" ref={hero}>
       {data.map((article, idx) => (
         <div
           className="panel"
+          id={`panel-${idx}`}
           key={`panel-${idx}`}
+          ref={(el) => (panels.current[idx] = el)}
           style={{
             background: `linear-gradient(90deg, #001B43 10%, #0E2F628C 45%, #153A7100 60%, #1C448000 100%), url(${article.preview})`,
           }}

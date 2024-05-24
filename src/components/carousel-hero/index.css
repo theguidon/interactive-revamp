@@ -1,5 +1,5 @@
 #home #hero {
-  background-color: blue;
+  background-color: black;
 
   display: grid;
   grid-template-columns: repeat(3, 100%);
@@ -13,6 +13,7 @@
   scrollbar-width: none;
 
   position: relative;
+  scroll-behavior: smooth;
 }
 
 #home #hero::-webkit-scrollbar {
