@@ -10,6 +10,18 @@ function MainPage() {
   const articles = useSelector((state) => state.articles);
   const [selected, setSelected] = useState(null);
 
+  const getGroupSlugs = (idx, count) => {
+    let minIdx = Math.floor(idx / count) * count;
+    let maxIdx = (Math.floor(idx / count) + 1) * count;
+
+    let filtered = [];
+    for (let i = minIdx; i < maxIdx; i++) {
+      filtered.push(articles.data[i].slug);
+    }
+
+    return filtered;
+  };
+
   return (
     <div id="home">
       <CarouselHero />
@@ -17,7 +29,7 @@ function MainPage() {
       <main className="general-container">
         <div className="articles-grid">
           {articles.isReady ? (
-            articles.data.map((article) => (
+            articles.data.map((article, idx) => (
               <React.Fragment key={`article-${article.slug}`}>
                 <ArticleCard
                   article={article}
@@ -28,21 +40,31 @@ function MainPage() {
                   active={selected === article.slug}
                 />
 
-                {/* {selected && selected === article.slug && (
-                  <FocusCard article={article} />
-                )} */}
+                {idx % 3 == 2 && getGroupSlugs(idx, 3).includes(selected) && (
+                  <FocusCard
+                    article={
+                      articles.data.filter((a) => a.slug === selected)[0]
+                    }
+                    focusGroup={3}
+                  />
+                )}
+
+                {idx % 2 == 1 && getGroupSlugs(idx, 2).includes(selected) && (
+                  <FocusCard
+                    article={
+                      articles.data.filter((a) => a.slug === selected)[0]
+                    }
+                    focusGroup={2}
+                  />
+                )}
+
+                {selected === article.slug && (
+                  <FocusCard article={article} focusGroup={1} />
+                )}
               </React.Fragment>
             ))
           ) : (
             <></>
-          )}
-
-          {articles.isReady && selected && (
-            <FocusCard
-              article={
-                articles.data.filter((article) => article.slug === selected)[0]
-              }
-            />
           )}
         </div>
       </main>

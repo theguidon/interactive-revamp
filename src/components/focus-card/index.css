@@ -7,6 +7,15 @@
   grid-column: 1 / -1;
 }
 
+.focus-card.focus-1,
+.focus-card.focus-2 {
+  display: none;
+}
+
+.focus-card.focus-3 {
+  display: block;
+}
+
 .focus-card .content {
   padding: 56px;
   border-top-left-radius: 8px;
@@ -27,6 +36,8 @@
   z-index: 5;
 
   background: linear-gradient(to right, #001e4be8 30%, #00153400 100%);
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 }
 
 .focus-card .content > *:not(.gradient-tint) {
@@ -111,9 +122,26 @@
 }
 
 @media screen and (max-width: 768px) {
+  .focus-card.focus-1,
+  .focus-card.focus-3 {
+    display: none;
+  }
+
+  .focus-card.focus-2 {
+    display: block;
+  }
 }
 
 @media screen and (max-width: 576px) {
+  .focus-card.focus-2,
+  .focus-card.focus-3 {
+    display: none;
+  }
+
+  .focus-card.focus-1 {
+    display: block;
+  }
+
   .focus-card .content .links {
     justify-content: space-between;
   }
