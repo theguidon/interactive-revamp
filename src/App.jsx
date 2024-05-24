@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Outlet, Routes, Route } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { fetchArticles } from "./redux/modules/articles";
 
 import AboutPage from "./pages/about";
