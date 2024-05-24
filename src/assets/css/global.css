@@ -52,6 +52,10 @@ h2 {
   max-width: 1440px;
 }
 
+.nowrap {
+  white-space: nowrap;
+}
+
 @media screen and (max-width: 1200px) {
   .general-container {
     padding: 0 44px;
