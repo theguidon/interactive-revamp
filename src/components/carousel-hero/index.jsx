@@ -28,9 +28,7 @@ function CarouselHero() {
       }
 
       const interval = setInterval(() => {
-        setPanelIndex((prev) =>
-          prev + 1 >= articles.data.length ? 0 : prev + 1
-        );
+        setPanelIndex((prev) => (prev + 1 >= 3 ? 0 : prev + 1));
       }, 5000);
 
       return () => clearInterval(interval);
@@ -42,63 +40,67 @@ function CarouselHero() {
       <div className="articles snap" ref={container}>
         {!articles.isLoading &&
           !articles.isError &&
-          articles.data.map((article, idx) => (
-            <div
-              className="panel"
-              id={`panel-${idx}`}
-              key={`panel-${idx}`}
-              ref={(el) => (panels.current[idx] = el)}
-              style={{
-                background: `linear-gradient(90deg, #001B43 10%, #0E2F628C 45%, #153A7100 60%, #1C448000 100%), url(${article.preview})`,
-              }}
-            >
-              <div className="general-container">
-                <p className="featured">Featured</p>
-                <h1 className="title">{article.title}</h1>
+          [...Array(3)].map((_, idx) => {
+            let article = articles.data[idx];
 
-                <p className="desc">{article.desc}</p>
+            return (
+              <div
+                className="panel"
+                id={`panel-${idx}`}
+                key={`panel-${idx}`}
+                ref={(el) => (panels.current[idx] = el)}
+                style={{
+                  background: `linear-gradient(90deg, #001B43 10%, #0E2F628C 45%, #153A7100 60%, #1C448000 100%), url(${article.preview})`,
+                }}
+              >
+                <div className="general-container">
+                  <p className="featured">Featured</p>
+                  <h1 className="title">{article.title}</h1>
 
-                <div className="bylines">
-                  {article.bylines.map((row) => (
-                    <React.Fragment>
-                      <p className="key">{row.key}</p>
-                      <p className="value">{row.value}</p>
-                    </React.Fragment>
-                  ))}
-                </div>
+                  <p className="desc">{article.desc}</p>
 
-                <div className="links">
-                  <Link
-                    className="view"
-                    to={`https://interactive.theguidon.com${article.path}`}
-                  >
-                    View Interactive
-                  </Link>
+                  <div className="bylines">
+                    {article.bylines.map((row) => (
+                      <React.Fragment>
+                        <p className="key">{row.key}</p>
+                        <p className="value">{row.value}</p>
+                      </React.Fragment>
+                    ))}
+                  </div>
 
-                  <div className="socials">
+                  <div className="links">
                     <Link
-                      to={`http://www.facebook.com/sharer.php?u=https://interactive.theguidon.com${article.path}`}
-                      target="_blank"
+                      className="view"
+                      to={`https://interactive.theguidon.com${article.path}`}
                     >
-                      <img src={icon_facebook} alt="Share on Facebook" />
+                      View Interactive
                     </Link>
-                    <Link
-                      to={`http://x.com/share?url=https://interactive.theguidon.com${article.path}&text=${article.title}`}
-                      target="_blank"
-                    >
-                      <img src={icon_twitter} alt="Share on Twitter" />
-                    </Link>
+
+                    <div className="socials">
+                      <Link
+                        to={`http://www.facebook.com/sharer.php?u=https://interactive.theguidon.com${article.path}`}
+                        target="_blank"
+                      >
+                        <img src={icon_facebook} alt="Share on Facebook" />
+                      </Link>
+                      <Link
+                        to={`http://x.com/share?url=https://interactive.theguidon.com${article.path}&text=${article.title}`}
+                        target="_blank"
+                      >
+                        <img src={icon_twitter} alt="Share on Twitter" />
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
       </div>
 
       <div className="buttons">
         {!articles.isLoading &&
           !articles.isError &&
-          articles.data.map((article, idx) => (
+          [...Array(3)].map((_, idx) => (
             <button
               className={`circle ${idx == panelIndex ? "active" : ""}`}
               key={`btn-${idx}`}
