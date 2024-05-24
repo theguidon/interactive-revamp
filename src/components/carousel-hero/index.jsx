@@ -76,6 +76,7 @@ function CarouselHero() {
                     <Link
                       className="view"
                       to={`https://interactive.theguidon.com${article.path}`}
+                      target="_blank"
                     >
                       View Interactive
                     </Link>

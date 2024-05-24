@@ -15,7 +15,9 @@ function Footer() {
       <div className="general-container">
         <div className="content">
           <div className="logo-desc">
-            <img className="logo" src={logo} />
+            <Link to="/" className="logo-container">
+              <img className="logo" src={logo} />
+            </Link>
 
             <p className="desc">
               The GUIDON’s interactive articles are an innovation in

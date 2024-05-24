@@ -14,10 +14,14 @@ footer .content {
   padding: 64px 0 40px;
 }
 
+footer .content .logo-desc .logo-container {
+  margin: 0 0 40px;
+  display: block;
+}
+
 footer .content .logo-desc .logo {
   width: 100%;
   height: auto;
-  margin: 0 0 40px;
 }
 
 footer .content .more {
@@ -148,8 +152,8 @@ footer .credits {
     grid-template-areas: "info" "more" "sub";
   }
 
-  footer .content .logo-desc .logo {
-    margin: 0 0 12px;
+  footer .content .logo-desc .logo-container {
+    margin: 0 0 16px;
   }
 
   footer .content .more {
