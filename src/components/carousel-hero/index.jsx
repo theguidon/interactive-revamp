@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 
 import icon_facebook from "./../../assets/images/icons/facebook.svg";
 import icon_twitter from "./../../assets/images/icons/twitter.svg";
+import { DateFormatter } from "../../utils/date-formatter";
 
 function CarouselHero() {
   const articles = useSelector((state) => state.articles);
@@ -57,6 +58,9 @@ function CarouselHero() {
                   <p className="featured">Featured</p>
                   <h1 className="title">{article.title}</h1>
 
+                  <p className="date">
+                    {DateFormatter(article.date_published)}
+                  </p>
                   <p className="desc">{article.description}</p>
 
                   <div className="bylines">

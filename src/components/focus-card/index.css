@@ -58,6 +58,7 @@
 
 .focus-card .content .date {
   color: #ffffffb2;
+  text-transform: uppercase;
 
   margin: 0 0 8px;
 }

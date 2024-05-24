@@ -106,6 +106,13 @@
   line-height: 110%;
 }
 
+#home #hero .articles .panel .date {
+  color: #ffffffb2;
+  text-transform: uppercase;
+
+  margin: 0 0 8px;
+}
+
 #home #hero .articles .panel .desc {
   width: 60%;
   margin: 0 0 16px;

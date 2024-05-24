@@ -3,6 +3,7 @@ import "./index.css";
 import { Link } from "react-router-dom";
 import icon_facebook from "./../../assets/images/icons/facebook.svg";
 import icon_twitter from "./../../assets/images/icons/twitter.svg";
+import { DateFormatter } from "../../utils/date-formatter";
 
 function FocusCard(props) {
   return (
@@ -18,7 +19,9 @@ function FocusCard(props) {
             <div className="gradient-tint" />
 
             <h2 className="title">{props.article.title}</h2>
-            <p className="date">{props.article.date_published}</p>
+            <p className="date">
+              {DateFormatter(props.article.date_published)}
+            </p>
             <p className="desc">{props.article.description}</p>
 
             <div className="links">
@@ -30,7 +33,7 @@ function FocusCard(props) {
                   View Interactive
                 </Link>
 
-                <buttton className="show-credits">Show Credits</buttton>
+                <button className="show-credits">Show Credits</button>
               </div>
 
               <div className="socials">
