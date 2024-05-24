@@ -17,7 +17,7 @@ function MainPage() {
       <main className="general-container">
         <div className="articles-grid">
           {articles.isReady ? (
-            articles.data.map((article, idx) => (
+            articles.data.map((article) => (
               <ArticleCard
                 article={article}
                 key={`article-${article.slug}`}
