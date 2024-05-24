@@ -27,7 +27,7 @@
   position: relative;
 }
 
-.focus-card .gradient-tint {
+.focus-card .content .gradient-tint {
   position: absolute;
   top: 0;
   left: 0;
@@ -85,7 +85,12 @@
 
   padding: 8px 80px;
   background-color: var(--dd-green);
+  border: 1px solid var(--dd-green);
   border-radius: 40px;
+}
+
+.focus-card .content .links .show-credits {
+  display: none;
 }
 
 .focus-card .content .links .socials {
@@ -142,14 +147,70 @@
     display: block;
   }
 
+  .focus-card .content {
+    border-radius: 8px;
+    padding: 24px 12px 12px;
+  }
+
+  .focus-card .content .gradient-tint {
+    border-radius: 8px;
+  }
+
+  .focus-card .content .title {
+    width: 100%;
+    margin: 0 0 4px;
+  }
+
+  .focus-card .content .desc {
+    width: 100%;
+    font-size: var(--body-font-size);
+
+    margin: 0 0 16px;
+  }
+
   .focus-card .content .links {
     justify-content: space-between;
   }
 
+  .focus-card .content .links .buttons {
+    flex-grow: 1;
+
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    column-gap: 8px;
+    row-gap: 8px;
+  }
+
   .focus-card .content .links .view {
     flex-grow: 1;
+    flex-shrink: 1;
+
     max-width: 300px;
     padding: 4px 16px;
     font-size: var(--body-font-size);
+  }
+
+  .focus-card .content .links .show-credits {
+    flex-grow: 1;
+    flex-shrink: 1;
+    display: block;
+
+    color: white;
+    border: 1px solid white;
+
+    font-size: var(--body-font-size);
+    font-weight: bold;
+    text-align: center;
+
+    max-width: 300px;
+    padding: 4px 16px;
+    border-radius: 40px;
+
+    cursor: pointer;
+  }
+
+  .focus-card .footer {
+    display: none;
   }
 }

@@ -22,12 +22,16 @@ function FocusCard(props) {
             <p className="desc">{props.article.description}</p>
 
             <div className="links">
-              <Link
-                className="view"
-                to={`https://interactive.theguidon.com${props.article.path}`}
-              >
-                View Interactive
-              </Link>
+              <div className="buttons">
+                <Link
+                  className="view"
+                  to={`https://interactive.theguidon.com${props.article.path}`}
+                >
+                  View Interactive
+                </Link>
+
+                <buttton className="show-credits">Show Credits</buttton>
+              </div>
 
               <div className="socials">
                 <Link
