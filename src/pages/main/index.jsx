@@ -18,7 +18,15 @@ function MainPage() {
         <div className="articles-grid">
           {articles.isReady ? (
             articles.data.map((article, idx) => (
-              <ArticleCard article={article} key={`article-${idx}`} />
+              <ArticleCard
+                article={article}
+                key={`article-${article.slug}`}
+                onCardClick={() => {
+                  if (selected !== article.slug) setSelected(article.slug);
+                  else setSelected(null);
+                }}
+                active={selected === article.slug}
+              />
             ))
           ) : (
             <></>

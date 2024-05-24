@@ -1,13 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import "./index.css";
 
 function ArticleCard(props) {
-  const [active, setActive] = useState(false);
-
   return (
     <div
-      className={`article-card ${active ? "active" : ""}`}
-      onClick={() => setActive((prev) => !prev)}
+      className={`article-card ${props.active ? "active" : ""}`}
+      onClick={props.onCardClick}
     >
       <div className="cover-container">
         <img className="cover" src={props.article.cover} />
