@@ -50,14 +50,16 @@ function CarouselHero() {
                 key={`panel-${idx}`}
                 ref={(el) => (panels.current[idx] = el)}
                 style={{
-                  background: `linear-gradient(90deg, #001B43 10%, #0E2F628C 45%, #153A7100 60%, #1C448000 100%), url(${article.preview})`,
+                  backgroundImage: `url(${article.preview})`,
                 }}
               >
+                <div className="gradient-tint" />
+
                 <div className="general-container">
                   <p className="featured">Featured</p>
                   <h1 className="title">{article.title}</h1>
 
-                  <p className="desc">{article.desc}</p>
+                  <p className="desc">{article.description}</p>
 
                   <div className="bylines">
                     {article.bylines.map((row) => (
