@@ -138,6 +138,11 @@
 }
 
 @media screen and (max-width: 576px) {
+  .focus-card {
+    margin-top: -32px;
+    margin-bottom: 16px;
+  }
+
   .focus-card.focus-2,
   .focus-card.focus-3 {
     display: none;
