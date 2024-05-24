@@ -8,7 +8,7 @@ function AboutPage() {
   <>
   <div className="about-main-grid">
     <div className="a">
-      <img className="gallery" src="https://picsum.photos/1080/300"></img>
+      <div className="gallery"></div>
       <p className="these">
         <b>
           These articles — the fruits of collaboration between the Writing

@@ -54,27 +54,24 @@
   }
 
   .gallery{
+    background: url("https://picsum.photos/1080/400") repeat-x;
+    height: 100%;
+    width: 1000%;
     grid-column: 1;
     grid-row: 1;
     opacity: 0.2;
     animation: slide 60s linear infinite;
   }
 
-  @keyframes slide {
+  @keyframes slide{
     0% {
-      transform: translateX(0px);
+      transform: translate3d(0, 0, 0);
     }
     100% {
-      transform: translateX(-1692px);
+      transform: translate3d(-1692px, 0, 0);
     }
   }
 
-  .a img {
-    height: 100%;
-    width: 100%;
-    object-fit: contain;
-  }
-  
   .green-span{
     color: #5EBC91;
     font-weight: bold;
