@@ -2,6 +2,8 @@
   display: flex;
   flex-flow: column nowrap;
   row-gap: 16px;
+
+  cursor: pointer;
 }
 
 .article-card .cover-container {
