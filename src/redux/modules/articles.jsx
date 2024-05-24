@@ -11,9 +11,9 @@ export const fetchArticles = createAsyncThunk("fetchArticles", async () => {
 const articlesSlice = createSlice({
   name: "articles",
   initialState: {
-    isLoading: false,
-    data: null,
+    isLoading: true,
     isError: false,
+    data: null,
   },
   extraReducers: (builder) => {
     builder.addCase(fetchArticles.pending, (state, action) => {
