@@ -92,6 +92,7 @@
 
 .focus-card .content .links .show-credits {
   display: none;
+  background-color: transparent;
 }
 
 .focus-card .content .links .socials {
