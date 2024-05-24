@@ -1,31 +1,35 @@
 #home #hero {
   background-color: black;
 
+  min-height: 640px;
+  width: 100%;
+
+  position: relative;
+}
+
+#home #hero .articles {
   display: grid;
   grid-template-columns: repeat(3, 100%);
   align-items: end;
 
-  min-height: 640px;
-  width: 100%;
   overflow-x: auto;
 
   -ms-overflow-style: none;
   scrollbar-width: none;
 
-  position: relative;
   scroll-behavior: smooth;
 }
 
-#home #hero::-webkit-scrollbar {
+#home #hero .articles::-webkit-scrollbar {
   display: none;
 }
 
-#home #hero.snap {
+#home #hero .articles.snap {
   overflow-x: scroll;
   scroll-snap-type: x mandatory;
 }
 
-#home #hero .panel {
+#home #hero .articles .panel {
   scroll-snap-align: start;
   width: 100%;
   height: 100%;
@@ -42,23 +46,11 @@
   justify-content: flex-end;
 }
 
-#home #hero .buttons {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 24px;
-
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  column-gap: 8px;
-}
-
-#home #hero .panel .general-container {
+#home #hero .articles .panel .general-container {
   padding: 0 100px;
 }
 
-#home #hero .panel .featured {
+#home #hero .articles .panel .featured {
   font-size: var(--body-s-font-size);
   text-transform: uppercase;
   color: var(--gdn-blue);
@@ -71,17 +63,17 @@
   margin: 0 0 24px;
 }
 
-#home #hero .panel .title {
+#home #hero .articles .panel .title {
   width: 60%;
   margin: 0 0 24px;
 }
 
-#home #hero .panel .desc {
+#home #hero .articles .panel .desc {
   width: 60%;
   margin: 0 0 16px;
 }
 
-#home #hero .panel .bylines {
+#home #hero .articles .panel .bylines {
   width: 40%;
 
   display: grid;
@@ -91,11 +83,11 @@
   margin: 0 0 32px;
 }
 
-#home #hero .panel .bylines .key {
+#home #hero .articles .panel .bylines .key {
   font-weight: bold;
 }
 
-#home #hero .panel .bylines .value {
+#home #hero .articles .panel .bylines .value {
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -104,14 +96,14 @@
   line-clamp: 1;
 }
 
-#home #hero .panel .links {
+#home #hero .articles .panel .links {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
   column-gap: 32px;
 }
 
-#home #hero .panel .links .view {
+#home #hero .articles .panel .links .view {
   color: white;
   text-decoration: none;
   font-size: var(--body-m-font-size);
@@ -122,10 +114,22 @@
   border-radius: 40px;
 }
 
-#home #hero .panel .links .socials {
+#home #hero .articles .panel .links .socials {
   display: flex;
   flex-flow: row nowrap;
   column-gap: 12px;
+}
+
+#home #hero .buttons {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 24px;
+
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  column-gap: 8px;
 }
 
 #home #hero .buttons button.circle {
