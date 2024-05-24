@@ -13,6 +13,7 @@ const articlesSlice = createSlice({
   initialState: {
     isLoading: true,
     isError: false,
+    isReady: false,
     data: null,
   },
   extraReducers: (builder) => {
@@ -22,6 +23,7 @@ const articlesSlice = createSlice({
     builder.addCase(fetchArticles.fulfilled, (state, action) => {
       state.isLoading = false;
       state.data = action.payload;
+      state.isReady = true;
     });
     builder.addCase(fetchArticles.rejected, (state, action) => {
       console.error(action.payload);

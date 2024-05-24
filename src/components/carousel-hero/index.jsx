@@ -16,7 +16,7 @@ function CarouselHero() {
   const panels = useRef([]);
 
   useEffect(() => {
-    if (!articles.isLoading && !articles.isError) {
+    if (articles.isReady) {
       if (container) {
         let cur = panels.current[panelIndex];
         let panel_bcr = cur.getBoundingClientRect();
@@ -38,8 +38,7 @@ function CarouselHero() {
   return (
     <div id="hero">
       <div className="articles snap" ref={container}>
-        {!articles.isLoading &&
-          !articles.isError &&
+        {articles.isReady &&
           [...Array(3)].map((_, idx) => {
             let article = articles.data[idx];
 
@@ -100,8 +99,7 @@ function CarouselHero() {
       </div>
 
       <div className="buttons">
-        {!articles.isLoading &&
-          !articles.isError &&
+        {articles.isReady &&
           [...Array(3)].map((_, idx) => (
             <button
               className={`circle ${idx == panelIndex ? "active" : ""}`}
