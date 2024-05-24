@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
 import "./index.css";
 
-import sample from "./../../assets/images/sample.png";
 import { Link } from "react-router-dom";
 
 import icon_facebook from "./../../assets/images/icons/facebook.svg";

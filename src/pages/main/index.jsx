@@ -31,9 +31,15 @@ function MainPage() {
           ) : (
             <></>
           )}
-        </div>
 
-        {/* <FocusCard /> */}
+          {articles.isReady && selected && (
+            <FocusCard
+              article={
+                articles.data.filter((article) => article.slug === selected)[0]
+              }
+            />
+          )}
+        </div>
       </main>
     </div>
   );

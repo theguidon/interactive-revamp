@@ -1,21 +1,37 @@
-@font-face {
-  font-family: "Chivo-Bold";
-  src: url("./../../assets/fonts/Chivo/CHIVO-REGULAR.TTF");
-}
-
-@font-face {
-  font-family: "TiemposHeadline";
-  src: url("./../../assets/fonts/TiemposHeadline/TIEMPOSHEADLINE-BLACK.OTF");
-}
-
 .focus-card {
-  background-image: linear-gradient(
-    90deg,
-    rgba(0, 30, 75, 0.91) 62%,
-    rgba(0, 21, 52, 0) 100%
-  );
   color: white;
-  padding: 2rem;
+
+  filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.25));
+  border-radius: 4px;
+
+  grid-column: 1 / -1;
+}
+
+.focus-card .content {
+  padding: 56px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+
+  background-size: cover !important;
+  background-position: center !important;
+
+  position: relative;
+}
+
+.focus-card .gradient-tint {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+
+  background: linear-gradient(to right, #001e4be8 30%, #00153400 100%);
+}
+
+.focus-card .content > *:not(.gradient-tint) {
+  position: relative;
+  z-index: 6;
 }
 
 .focus-card .heading {
@@ -23,47 +39,89 @@
 }
 
 .focus-card .title {
-  font-family: "TiemposHeadline";
-  font-size: 312%;
-  width: 50%;
+  font-family: "Tiempos Headline";
+  width: 75%;
+  margin: 0 0 20px;
+  line-height: 120%;
 }
 
-.focus-card .date-byline {
-  color: rgba(255, 255, 255, 0.7);
+.focus-card .date {
+  color: #ffffffb2;
+
+  margin: 0 0 8px;
 }
 
-.focus-card .others {
+.focus-card .desc {
+  font-size: var(--body-m-font-size);
+
+  width: 60%;
+  margin: 0 0 40px;
+}
+
+.focus-card .content .links {
   display: flex;
+  flex-flow: row nowrap;
   align-items: center;
-  margin-top: 1.5rem;
-  margin-left: 0.5rem;
-  width: 25%;
+  column-gap: 32px;
 }
 
-.focus-card .social-links {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  margin-top: 0.2rem;
-  gap: 0.3rem;
-  margin-left: 1rem;
-}
-
-.focus-card .button {
-  background: linear-gradient(
-    97deg,
-    rgba(40, 184, 118, 1),
-    rgba(43, 79, 134, 1)
-  );
-  border-radius: 12px;
-  text-align: center;
-  font-family: "Chivo-Bold", sans-serif;
-  color: #fff;
-  width: 15rem;
-  padding: 0.4rem;
-  border-radius: 50px;
+.focus-card .content .links .view {
+  color: white;
   text-decoration: none;
-  border: none;
-  font-size: smaller;
-  font-weight: 500;
+  font-size: var(--body-m-font-size);
+  font-weight: bold;
+  text-align: center;
+
+  padding: 8px 80px;
+  background-color: var(--dd-green);
+  border-radius: 40px;
+}
+
+.focus-card .content .links .socials {
+  display: flex;
+  flex-flow: row nowrap;
+  column-gap: 12px;
+}
+
+.focus-card .footer {
+  padding: 16px 56px;
+  background-color: #061020;
+
+  display: grid;
+  grid-template-columns: max-content 1fr max-content 1fr;
+  column-gap: 24px;
+  row-gap: 8px;
+
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.focus-card .footer .key {
+  font-weight: bold;
+}
+
+.focus-card .footer .value {
+  color: #e4e4e4;
+}
+
+@media screen and (max-width: 1200px) {
+}
+
+@media screen and (max-width: 992px) {
+}
+
+@media screen and (max-width: 768px) {
+}
+
+@media screen and (max-width: 576px) {
+  .focus-card .content .links {
+    justify-content: space-between;
+  }
+
+  .focus-card .content .links .view {
+    flex-grow: 1;
+    max-width: 300px;
+    padding: 4px 16px;
+    font-size: var(--body-font-size);
+  }
 }

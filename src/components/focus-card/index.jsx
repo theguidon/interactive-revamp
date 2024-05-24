@@ -3,43 +3,56 @@ import "./index.css";
 import { Link } from "react-router-dom";
 import icon_facebook from "./../../assets/images/icons/facebook.svg";
 import icon_twitter from "./../../assets/images/icons/twitter.svg";
-import icon_instagram from "./../../assets/images/icons/instagram.svg";
 
-
-function FocusCard() {
-  var title = "Placeholder Title: Placeholder Subtitle";
-  var description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ut sem eu.";
-  var writers_byline = "In eu est laoreet, lacinia dui.";
-  var date = "May 2024";
-
-  var interactiveLink = "https://interactive.theguidon.com";
-
+function FocusCard(props) {
   return (
-    <>
     <div className="focus-card">
-      <div className="heading">
-        <div className="title">{title}</div>
-        <div className="date-byline">{date} · by {writers_byline}</div>
-        <p>{description}</p>
-      </div>
-      <div className="others">
-        <Link to= {interactiveLink} target="_blank">
-          <button className="button">View interactive</button>
-        </Link>
-        <div className="social-links">
-          <Link to="https://facebook.com/TheGUIDON" target="_blank">
-            <img src={icon_facebook} alt="Facebook" />
+      <div
+        className="content"
+        style={{
+          backgroundImage: `url(${props.article.cover})`,
+        }}
+      >
+        <div className="gradient-tint" />
+
+        <h2 className="title">{props.article.title}</h2>
+        <p className="date">{props.article.date_published}</p>
+        <p className="desc">{props.article.description}</p>
+
+        <div className="links">
+          <Link
+            className="view"
+            to={`https://interactive.theguidon.com${props.article.path}`}
+          >
+            View Interactive
           </Link>
-          <Link to="https://x.com/TheGUIDON" target="_blank">
-            <img src={icon_twitter} alt="Twitter" />
-          </Link>
-          <Link to="https://www.instagram.com/theguidon" target="_blank">
-            <img src={icon_instagram} alt="Instagram" />
-          </Link>
+
+          <div className="socials">
+            <Link
+              to={`http://www.facebook.com/sharer.php?u=https://interactive.theguidon.com${props.article.path}`}
+              target="_blank"
+            >
+              <img src={icon_facebook} alt="Share on Facebook" />
+            </Link>
+            <Link
+              to={`http://x.com/share?url=https://interactive.theguidon.com${props.article.path}&text=${props.article.title}`}
+              target="_blank"
+            >
+              <img src={icon_twitter} alt="Share on Twitter" />
+            </Link>
+          </div>
         </div>
       </div>
+
+      <div className="footer">
+        {props.article.bylines.map((row, idx) => (
+          <React.Fragment key={`bylines-row-${idx}`}>
+            <p className="key">{row.key}</p>
+            <p className="value">{row.value}</p>
+          </React.Fragment>
+        ))}
+      </div>
     </div>
-    </>
   );
 }
 

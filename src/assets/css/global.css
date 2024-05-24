@@ -60,7 +60,7 @@ h2 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   column-gap: 24px;
-  row-gap: 40px;
+  row-gap: 32px;
 }
 
 /* loading animation */
@@ -90,6 +90,10 @@ h2 {
   to {
     background-position-x: 0%;
   }
+}
+
+a > img {
+  display: block;
 }
 
 @media screen and (max-width: 1200px) {

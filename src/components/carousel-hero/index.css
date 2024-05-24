@@ -1,5 +1,5 @@
 #home #hero {
-  background-color: black;
+  /* background-color: black; */
 
   min-height: 640px;
   width: 100%;
@@ -103,7 +103,7 @@
   font-family: "Tiempos Headline";
   width: 60%;
   margin: 0 0 24px;
-  line-height: 100%;
+  line-height: 110%;
 }
 
 #home #hero .articles .panel .desc {
@@ -132,6 +132,8 @@
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
   line-clamp: 1;
+
+  color: #e4e4e4;
 }
 
 #home #hero .articles .panel .links {

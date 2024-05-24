@@ -2,8 +2,6 @@
   display: flex;
   flex-flow: column nowrap;
   row-gap: 16px;
-
-  padding-bottom: 16px;
 }
 
 .article-card .cover-container {
