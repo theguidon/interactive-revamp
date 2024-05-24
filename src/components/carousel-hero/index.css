@@ -65,15 +65,20 @@
     #153a7100 60%,
     #1c448000 100%
   );
-
+  background: linear-gradient(
+    90deg,
+    #001b43ff 10%,
+    #0e2f628c 35%,
+    #1c448000 60%
+  );
   /* background: linear-gradient(90deg, #000000a0 30%, #00000000 60%); */
   /* background: linear-gradient(90deg, #000000a0 40%, #00000000 100%); */
-  background: linear-gradient(
+  /* background: linear-gradient(
     90deg,
     #000000c0 0%,
     #000000a0 40%,
     #00000000 100%
-  );
+  ); */
 }
 
 #home #hero .articles .panel .general-container {
@@ -107,7 +112,7 @@
 }
 
 #home #hero .articles .panel .bylines {
-  width: 40%;
+  width: 50%;
 
   display: grid;
   grid-template-columns: max-content 1fr;
@@ -193,8 +198,13 @@
     padding: 0 76px;
   }
 
-  #home #hero .articles .panel .bylines {
-    width: 70%;
+  #home #hero .articles .panel .gradient-tint {
+    background: linear-gradient(
+      90deg,
+      #001b43ff 10%,
+      #0e2f628c 50%,
+      #1c448000 90%
+    );
   }
 }
 
@@ -207,8 +217,16 @@
     padding: 0 56px;
   }
 
+  #home #hero .articles .panel .title {
+    width: 80%;
+  }
+
+  #home #hero .articles .panel .desc {
+    width: 60%;
+  }
+
   #home #hero .articles .panel .bylines {
-    width: 85%;
+    width: 60%;
   }
 }
 
@@ -217,12 +235,29 @@
     padding: 100px 0 60px;
   }
 
+  #home #hero .articles .panel .gradient-tint {
+    background: linear-gradient(
+      90deg,
+      #001b43ff 10%,
+      #0e2f628c 50%,
+      #1c448000 90%
+    );
+  }
+
   #home #hero .articles .panel .general-container {
     padding: 0 36px;
   }
 
-  #home #hero .articles .panel .bylines {
+  #home #hero .articles .panel .title {
     width: 100%;
+  }
+
+  #home #hero .articles .panel .desc {
+    width: 70%;
+  }
+
+  #home #hero .articles .panel .bylines {
+    width: 70%;
   }
 }
 
@@ -235,11 +270,10 @@
     background: linear-gradient(
       0deg,
       #061a39cc 0%,
-      /* #0e2f628c 50%, */ #153a7100 65%,
+      #153a7100 70%,
       #1c448000 100%
     );
-
-    background: linear-gradient(180deg, #00000000 0%, #000000a0 100%);
+    /* background: linear-gradient(180deg, #00000000 0%, #000000a0 100%); */
     /* background: linear-gradient(180deg, #1c448000 0%, #1c4480a0 100%); */
     /* background: linear-gradient(180deg, #1c448000 0%, #1c4480 100%); */
   }
