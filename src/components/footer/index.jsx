@@ -15,7 +15,7 @@ function Footer() {
       <div className="general-container">
         <div className="content">
           <div className="logo-desc">
-            <img src={logo} />
+            <img className="logo" src={logo} />
 
             <p className="desc">
               The GUIDON’s interactive articles are an innovation in
@@ -26,12 +26,14 @@ function Footer() {
           </div>
 
           <div className="more">
-            <p className="heading">More from The GUIDON</p>
+            <p className="heading">
+              More from <span className="nowrap">The GUIDON</span>
+            </p>
             <Link to="https://theguidon.com" target="_blank">
-              The GUIDON Main
+              <span className="nowrap">The GUIDON</span> Main
             </Link>
             <Link to="https://archives.theguidon.com" target="_blank">
-              The GUIDON Archives
+              <span className="nowrap">The GUIDON</span> Archives
             </Link>
             <Link to="https://vantage.theguidon.com" target="_blank">
               Vantage Magazine
