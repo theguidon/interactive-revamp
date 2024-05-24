@@ -66,3 +66,18 @@
 .article-card.active .title {
   opacity: 0;
 }
+
+@media screen and (max-width: 1200px) {
+}
+
+@media screen and (max-width: 992px) {
+}
+
+@media screen and (max-width: 768px) {
+}
+
+@media screen and (max-width: 576px) {
+  .article-card .title {
+    font-size: var(--body-font-size);
+  }
+}
