@@ -8,6 +8,7 @@ import MainPage from "./pages/main";
 
 import Header from "./components/header";
 import Footer from "./components/footer";
+import ScrollToTop from "./utils/scroll-to-top";
 
 function App() {
   const dispatch = useDispatch();
@@ -25,6 +26,8 @@ function App() {
           <Route path="*" element={<h1>404</h1>} />
         </Route>
       </Routes>
+
+      <ScrollToTop />
     </React.Fragment>
   );
 }
