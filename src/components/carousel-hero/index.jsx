@@ -62,8 +62,8 @@ function CarouselHero() {
                   <p className="desc">{article.description}</p>
 
                   <div className="bylines">
-                    {article.bylines.map((row) => (
-                      <React.Fragment>
+                    {article.bylines.map((row, idx2) => (
+                      <React.Fragment key={`panel-${idx}-${idx2}`}>
                         <p className="key">{row.key}</p>
                         <p className="value">{row.value}</p>
                       </React.Fragment>
