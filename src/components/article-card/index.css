@@ -6,6 +6,10 @@
   cursor: pointer;
 }
 
+.article-card:hover .cover.hover {
+  opacity: 1;
+}
+
 .article-card .cover-container {
   width: 100%;
   height: 200px;
@@ -32,11 +36,26 @@
   transition: 0.3s;
 }
 
+.article-card .cover.hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  opacity: 0;
+}
+
 .article-card.active .cover {
   height: calc(100% - 16px);
   width: calc(100% - 16px);
 
   border-radius: 4px;
+}
+
+.article-card.active .cover.hover {
+  opacity: 0;
+  margin: 8px;
 }
 
 .article-card .cover-container .polygon {

@@ -9,6 +9,7 @@ function ArticleCard(props) {
     >
       <div className="cover-container">
         <img className="cover" src={props.article.cover} />
+        <img className="cover hover" src={props.article.preview} />
         <svg
           className="polygon"
           viewBox="0 0 23 22"
