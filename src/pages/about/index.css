@@ -3,7 +3,7 @@
 }
 
 #about .general-container {
-  max-width: 1000px;
+  max-width: 1200px;
 }
 
 #about .hl {
@@ -15,7 +15,7 @@
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
-  padding: 140px 0;
+  padding: 180px 0 140px;
 
   position: relative;
 }
@@ -107,17 +107,45 @@
   #about {
     padding: 0 0 68px;
   }
+
+  #about #hero {
+    min-height: 600px;
+    padding: 160px 0 112px;
+  }
+
+  #about #hero p {
+    font-size: 32px;
+  }
 }
 
 @media screen and (max-width: 992px) {
   #about {
     padding: 0 0 56px;
   }
+
+  #about #hero {
+    min-height: 560px;
+    justify-content: flex-end;
+    padding: 140px 0 84px;
+  }
+
+  #about #hero p {
+    font-size: 28px;
+  }
 }
 
 @media screen and (max-width: 768px) {
   #about {
     padding: 0 0 48px;
+  }
+
+  #about #hero {
+    min-height: 520px;
+    padding: 120px 0 56px;
+  }
+
+  #about #hero p {
+    font-size: 24px;
   }
 }
 
@@ -128,7 +156,6 @@
 
   #about #hero {
     min-height: 480px;
-    justify-content: flex-end;
     padding: 100px 0 32px;
   }
 
