@@ -29,6 +29,7 @@ function FocusCard(props) {
                 <Link
                   className="view"
                   to={`https://interactive.theguidon.com${props.article.path}`}
+                  target="_blank"
                 >
                   View Interactive
                 </Link>

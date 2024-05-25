@@ -89,7 +89,8 @@ function Footer() {
 
         <div className="credits">
           &copy; The GUIDON 2024 All rights reserved. Designed and developed by
-          the Digital Development staff 2023–2024.
+          the Digital Development staff{" "}
+          <span className="nowrap">2023–2024</span>.
         </div>
       </div>
     </footer>
