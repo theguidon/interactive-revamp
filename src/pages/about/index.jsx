@@ -20,7 +20,8 @@ function AboutPage() {
             <span className="hl">
               experience that goes beyond just traditional text and images
             </span>{" "}
-            through the use of modern web technologies.
+            through the use of modern{" "}
+            <span className="nowrap">web technologies.</span>
           </p>
         </div>
       </div>
@@ -54,8 +55,8 @@ function AboutPage() {
       <div id="guidon" className="general-container">
         <div>
           <p className="official">
-            The GUIDON is the official student publication of the Ateneo de
-            Manila University.
+            <span className="nowrap">The GUIDON</span> is the official student
+            publication of the Ateneo de Manila University.
           </p>
 
           <p className="desc">
