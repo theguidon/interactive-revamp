@@ -15,6 +15,7 @@
   display: grid;
   grid-template-columns: repeat(3, 100%);
   align-items: end;
+  height: 100%;
 
   overflow-x: auto;
 
@@ -29,7 +30,7 @@
 }
 
 #home #hero .articles.snap {
-  overflow-x: scroll;
+  overflow-x: hidden;
   scroll-snap-type: x mandatory;
 }
 
@@ -272,11 +273,13 @@
 
 @media screen and (max-width: 576px) {
   #home #hero {
-    min-height: 560px;
+    min-height: unset;
+    height: 560px;
   }
 
   #home #hero .articles .panel {
     padding: 100px 0 56px;
+    /* min-height: 560px; */
   }
 
   #home #hero .articles .panel .gradient-tint {
