@@ -35,6 +35,7 @@
     180deg,
     #00000000 0%,
     #07101f59 5%,
+    #07101f 70%,
     #07101f 90%,
     #00000000 100%
   );
@@ -113,9 +114,9 @@
     padding: 160px 0 112px;
   }
 
-  #about #hero p {
+  /* #about #hero p {
     font-size: 32px;
-  }
+  } */
 }
 
 @media screen and (max-width: 992px) {
@@ -144,9 +145,9 @@
     padding: 120px 0 56px;
   }
 
-  #about #hero p {
+  /* #about #hero p {
     font-size: 24px;
-  }
+  } */
 }
 
 @media screen and (max-width: 576px) {
@@ -155,7 +156,8 @@
   }
 
   #about #hero {
-    min-height: 480px;
+    /* min-height: 480px; */
+    min-height: 400px;
     padding: 100px 0 32px;
   }
 

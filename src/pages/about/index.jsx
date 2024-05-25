@@ -3,12 +3,14 @@ import "./index.css";
 import { Link } from "react-router-dom";
 
 import logo from "./../../assets/images/logos/base-white.svg";
+import CardGallery from "../../components/card-gallery";
 
 function AboutPage() {
   return (
     <div id="about">
       <div id="hero">
         {/* bg images */}
+        <CardGallery />
 
         {/* tint layer */}
         <div className="bg-tint" />
