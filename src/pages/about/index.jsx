@@ -4,8 +4,11 @@ import { Link } from "react-router-dom";
 
 import logo from "./../../assets/images/logos/base-white.svg";
 import CardGallery from "../../components/card-gallery";
+import { useSelector } from "react-redux";
 
 function AboutPage() {
+  const articles = useSelector((state) => state.articles);
+
   return (
     <div id="about">
       <div id="hero">
@@ -50,9 +53,19 @@ function AboutPage() {
         </p>
       </div>
 
-      <Link className="explore" to="/">
-        Explore the interactives
-      </Link>
+      <div
+        id="explore"
+        style={{
+          background: articles.isReady
+            ? `linear-gradient(0deg, #00000060, #00000060), url(${articles.data[0].cover})`
+            : "",
+        }}
+      >
+        <h3>Immerse yourself in a new story.</h3>
+        <Link className="explore" to="/">
+          Explore the interactives
+        </Link>
+      </div>
 
       <div id="guidon" className="general-container">
         <div>

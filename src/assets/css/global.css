@@ -30,6 +30,7 @@ body {
 
   --h1-font-size: 64px;
   --h2-font-size: 48px;
+  --h3-font-size: 40px;
 
   --body-l-font-size: 20px;
   --body-m-font-size: 18px;
@@ -43,6 +44,10 @@ h1 {
 
 h2 {
   font-size: var(--h2-font-size);
+}
+
+h3 {
+  font-size: var(--h3-font-size);
 }
 
 .general-container {
@@ -122,6 +127,7 @@ a > img {
   :root {
     --h1-font-size: 40px;
     --h2-font-size: 32px;
+    --h3-font-size: 28px;
 
     --body-l-font-size: 20px;
     --body-m-font-size: 18px;
