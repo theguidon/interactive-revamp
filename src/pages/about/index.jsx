@@ -12,10 +12,8 @@ function AboutPage() {
   return (
     <div id="about">
       <div id="hero">
-        {/* bg images */}
         <CardGallery />
 
-        {/* tint layer */}
         <div className="bg-tint" />
 
         <div className="general-container">
