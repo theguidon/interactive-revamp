@@ -13,7 +13,7 @@ function FocusCard(props) {
           <div
             className="content"
             style={{
-              backgroundImage: `url(${props.article.preview})`,
+              backgroundImage: `url(${props.article.preview_image})`,
             }}
           >
             <div className="gradient-tint" />

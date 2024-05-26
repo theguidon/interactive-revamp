@@ -49,7 +49,7 @@ function CarouselHero() {
                 key={`panel-${idx}`}
                 ref={(el) => (panels.current[idx] = el)}
                 style={{
-                  backgroundImage: `url(${article.preview})`,
+                  backgroundImage: `url(${article.preview_image})`,
                 }}
               >
                 <div className="gradient-tint" />

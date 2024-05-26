@@ -9,7 +9,15 @@ function ArticleCard(props) {
     >
       <div className="cover-container">
         <img className="cover" src={props.article.cover} />
-        <img className="cover hover" src={props.article.preview} />
+
+        {props.article.preview_video && (
+          <video className="preview" autoPlay loop muted playsInline>
+            <source src={props.article.preview_video} type="video/mp4" />
+          </video>
+        )}
+
+        {/* <img className="cover hover" src={props.article.preview_image} /> */}
+
         <svg
           className="polygon"
           viewBox="0 0 23 22"
