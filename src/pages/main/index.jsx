@@ -107,22 +107,24 @@ function MainPage() {
               All
             </button>
 
-            {Object.keys(categories).map((categ, idx) => (
-              <button
-                key={`categ-${idx}`}
-                className={`categ ${
-                  allCategsEnabled() ? "" : categories[categ] ? "active" : ""
-                }`}
-                onClick={() => {
-                  let nf = { ...categories };
-                  nf[categ] = !nf[categ];
+            {Object.keys(categories)
+              .sort()
+              .map((categ, idx) => (
+                <button
+                  key={`categ-${idx}`}
+                  className={`categ ${
+                    allCategsEnabled() ? "" : categories[categ] ? "active" : ""
+                  }`}
+                  onClick={() => {
+                    let nf = { ...categories };
+                    nf[categ] = !nf[categ];
 
-                  setCategories(nf);
-                }}
-              >
-                {categ}
-              </button>
-            ))}
+                    setCategories(nf);
+                  }}
+                >
+                  {categ}
+                </button>
+              ))}
           </div>
 
           <div className="search-field">
