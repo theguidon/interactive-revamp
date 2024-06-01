@@ -55,7 +55,7 @@ function AboutPage() {
         id="explore"
         style={{
           background: articles.isReady
-            ? `linear-gradient(0deg, #00000060, #00000060), url(${articles.data[0].preview})`
+            ? `linear-gradient(0deg, #00000060, #00000060), url(${articles.data[0].preview_image})`
             : "",
         }}
       >
