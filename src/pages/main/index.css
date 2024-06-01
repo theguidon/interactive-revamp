@@ -5,6 +5,12 @@ main.general-container {
 
 main .filters-group {
   margin: 0 0 48px;
+  row-gap: 16px;
+
+  display: flex;
+  flex-flow: column nowrap;
+  column-gap: 24px;
+  align-items: flex-start;
 }
 
 main .filters-group .categories {
@@ -34,4 +40,64 @@ main .filters-group .categories .categ.active {
   background-color: white;
   border-color: white;
   /* font-weight: bold; */
+}
+
+main .filters-group .search-field {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+
+  flex-grow: 0;
+  width: fit-content;
+
+  border-radius: 16px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #ffffffcc;
+  background-color: transparent;
+
+  padding: 4px 16px;
+  column-gap: 8px;
+}
+
+main .filters-group .search-field input {
+  /* outline: none; */
+  width: 100%;
+  max-width: 150px;
+  background-color: transparent;
+
+  color: #ffffffcc;
+  font-size: var(--body-s-font-size);
+
+  outline: none;
+  border: none;
+}
+
+main .filters-group .search-field svg {
+  height: 20px;
+  color: #ffffffcc;
+}
+
+@media screen and (max-width: 1200px) {
+}
+
+@media screen and (max-width: 992px) {
+}
+
+@media screen and (max-width: 768px) {
+}
+
+@media screen and (max-width: 576px) {
+  main .filters-group {
+    flex-flow: column-reverse nowrap;
+  }
+
+  main .filters-group .search-field {
+    flex-grow: 1;
+    width: 100%;
+  }
+
+  main .filters-group .search-field input {
+    max-width: unset;
+  }
 }
