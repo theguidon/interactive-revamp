@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import "./index.css";
 import FocusCard from "../../components/focus-card";
@@ -8,7 +8,11 @@ import { useSelector } from "react-redux";
 
 function MainPage() {
   const articles = useSelector((state) => state.articles);
+  const [filtered, setFiltered] = useState([]);
   const [selected, setSelected] = useState(null);
+
+  const [filters, setFilters] = useState({});
+  const [search, setSearch] = useState("");
 
   const getGroupSlugs = (idx, count) => {
     let minIdx = Math.floor(idx / count) * count;
@@ -24,11 +28,56 @@ function MainPage() {
 
   const ceilCount = () => (Math.floor(articles.data.length / 3) + 1) * 3;
 
+  useEffect(() => {
+    if (!articles.isReady) return;
+
+    let enabled = [];
+    for (const [key, value] of Object.entries(filters)) {
+      if (value) enabled.push(key);
+    }
+
+    let pre = articles.data.filter((a) =>
+      a.categories.some((categ) => enabled.includes(categ))
+    );
+
+    setFiltered(pre);
+  }, [filters, search]);
+
+  useEffect(() => {
+    let pre = {};
+
+    for (let i = 0; i < articles.data.length; i++) {
+      for (let j = 0; j < articles.data[i].categories.length; j++) {
+        pre[articles.data[i].categories[j]] = true;
+      }
+    }
+
+    setFilters(pre);
+  }, [articles]);
+
   return (
     <div id="home">
       <CarouselHero />
 
       <main className="general-container">
+        <div className="filters-group">
+          <div className="categories">
+            {Object.keys(filters).map((categ, idx) => (
+              <button
+                className={`categ ${filters[categ] ? "active" : ""}`}
+                onClick={() => {
+                  let nf = { ...filters };
+                  nf[categ] = !nf[categ];
+
+                  setFilters(nf);
+                }}
+              >
+                {categ}
+              </button>
+            ))}
+          </div>
+        </div>
+
         <div className="articles-grid">
           {articles.isReady &&
             [...Array(ceilCount())].map((_, idx) => (

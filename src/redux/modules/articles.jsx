@@ -14,7 +14,7 @@ const articlesSlice = createSlice({
     isLoading: true,
     isError: false,
     isReady: false,
-    data: null,
+    data: {},
   },
   extraReducers: (builder) => {
     builder.addCase(fetchArticles.pending, (state, action) => {
