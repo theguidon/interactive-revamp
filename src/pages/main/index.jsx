@@ -4,7 +4,7 @@ import "./index.css";
 import FocusCard from "../../components/focus-card";
 import CarouselHero from "../../components/carousel-hero";
 import ArticleCard from "../../components/article-card";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 function MainPage() {
   const articles = useSelector((state) => state.articles);
@@ -16,11 +16,13 @@ function MainPage() {
 
     let filtered = [];
     for (let i = minIdx; i < maxIdx; i++) {
-      filtered.push(articles.data[i].slug);
+      if (i < articles.data.length) filtered.push(articles.data[i].slug);
     }
 
     return filtered;
   };
+
+  const ceilCount = () => (Math.floor(articles.data.length / 3) + 1) * 3;
 
   return (
     <div id="home">
@@ -29,16 +31,19 @@ function MainPage() {
       <main className="general-container">
         <div className="articles-grid">
           {articles.isReady &&
-            articles.data.map((article, idx) => (
-              <React.Fragment key={`article-${article.slug}`}>
-                <ArticleCard
-                  article={article}
-                  onCardClick={() => {
-                    if (selected !== article.slug) setSelected(article.slug);
-                    else setSelected(null);
-                  }}
-                  active={selected === article.slug}
-                />
+            [...Array(ceilCount())].map((_, idx) => (
+              <React.Fragment key={`article-${idx}`}>
+                {idx < articles.data.length && (
+                  <ArticleCard
+                    article={articles.data[idx]}
+                    onCardClick={() => {
+                      if (selected !== articles.data[idx].slug)
+                        setSelected(articles.data[idx].slug);
+                      else setSelected(null);
+                    }}
+                    active={selected === articles.data[idx].slug}
+                  />
+                )}
 
                 {idx % 3 == 2 && getGroupSlugs(idx, 3).includes(selected) && (
                   <FocusCard
@@ -58,9 +63,10 @@ function MainPage() {
                   />
                 )}
 
-                {selected === article.slug && (
-                  <FocusCard article={article} focusGroup={1} />
-                )}
+                {idx < articles.data.length &&
+                  selected === articles.data[idx].slug && (
+                    <FocusCard article={articles.data[idx]} focusGroup={1} />
+                  )}
               </React.Fragment>
             ))}
         </div>
