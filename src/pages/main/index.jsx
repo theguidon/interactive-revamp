@@ -11,48 +11,78 @@ function MainPage() {
   const [filtered, setFiltered] = useState([]);
   const [selected, setSelected] = useState(null);
 
-  const [filters, setFilters] = useState({});
+  const [categories, setCategories] = useState({});
   const [search, setSearch] = useState("");
 
   const getGroupSlugs = (idx, count) => {
     let minIdx = Math.floor(idx / count) * count;
     let maxIdx = (Math.floor(idx / count) + 1) * count;
 
-    let filtered = [];
+    let pre = [];
     for (let i = minIdx; i < maxIdx; i++) {
-      if (i < articles.data.length) filtered.push(articles.data[i].slug);
+      if (i < filtered.length) pre.push(filtered[i].slug);
     }
 
-    return filtered;
+    return pre;
   };
 
-  const ceilCount = () => (Math.floor(articles.data.length / 3) + 1) * 3;
+  const ceilCount = () => (Math.floor(filtered.length / 3) + 1) * 3;
+
+  const allCategsEnabled = () => {
+    let valid = true;
+    let keys = Object.keys(categories);
+
+    for (let i = 0; i < keys.length; i++) {
+      if (!categories[keys[i]]) {
+        valid = false;
+        break;
+      }
+    }
+
+    return valid;
+  };
+
+  const handleAllClick = () => {
+    let nf = { ...categories };
+
+    if (allCategsEnabled()) {
+      Object.keys(nf).forEach((categ) => {
+        nf[categ] = false;
+      });
+    } else {
+      Object.keys(nf).forEach((categ) => {
+        nf[categ] = true;
+      });
+    }
+
+    setCategories(nf);
+  };
 
   useEffect(() => {
     if (!articles.isReady) return;
 
     let enabled = [];
-    for (const [key, value] of Object.entries(filters)) {
+    for (const [key, value] of Object.entries(categories)) {
       if (value) enabled.push(key);
     }
 
-    let pre = articles.data.filter((a) =>
+    let nf = articles.data.filter((a) =>
       a.categories.some((categ) => enabled.includes(categ))
     );
 
-    setFiltered(pre);
-  }, [filters, search]);
+    setFiltered(nf);
+  }, [categories, search]);
 
   useEffect(() => {
-    let pre = {};
+    let nf = {};
 
     for (let i = 0; i < articles.data.length; i++) {
       for (let j = 0; j < articles.data[i].categories.length; j++) {
-        pre[articles.data[i].categories[j]] = true;
+        nf[articles.data[i].categories[j]] = true;
       }
     }
 
-    setFilters(pre);
+    setCategories(nf);
   }, [articles]);
 
   return (
@@ -62,14 +92,24 @@ function MainPage() {
       <main className="general-container">
         <div className="filters-group">
           <div className="categories">
-            {Object.keys(filters).map((categ, idx) => (
+            <button
+              className={`categ ${allCategsEnabled() ? "active" : ""}`}
+              onClick={handleAllClick}
+            >
+              All
+            </button>
+
+            {Object.keys(categories).map((categ, idx) => (
               <button
-                className={`categ ${filters[categ] ? "active" : ""}`}
+                key={`categ-${idx}`}
+                className={`categ ${
+                  allCategsEnabled() ? "" : categories[categ] ? "active" : ""
+                }`}
                 onClick={() => {
-                  let nf = { ...filters };
+                  let nf = { ...categories };
                   nf[categ] = !nf[categ];
 
-                  setFilters(nf);
+                  setCategories(nf);
                 }}
               >
                 {categ}
@@ -82,40 +122,35 @@ function MainPage() {
           {articles.isReady &&
             [...Array(ceilCount())].map((_, idx) => (
               <React.Fragment key={`article-${idx}`}>
-                {idx < articles.data.length && (
+                {idx < filtered.length && (
                   <ArticleCard
-                    article={articles.data[idx]}
+                    article={filtered[idx]}
                     onCardClick={() => {
-                      if (selected !== articles.data[idx].slug)
-                        setSelected(articles.data[idx].slug);
+                      if (selected !== filtered[idx].slug)
+                        setSelected(filtered[idx].slug);
                       else setSelected(null);
                     }}
-                    active={selected === articles.data[idx].slug}
+                    active={selected === filtered[idx].slug}
                   />
                 )}
 
                 {idx % 3 == 2 && getGroupSlugs(idx, 3).includes(selected) && (
                   <FocusCard
-                    article={
-                      articles.data.filter((a) => a.slug === selected)[0]
-                    }
+                    article={filtered.filter((a) => a.slug === selected)[0]}
                     focusGroup={3}
                   />
                 )}
 
                 {idx % 2 == 1 && getGroupSlugs(idx, 2).includes(selected) && (
                   <FocusCard
-                    article={
-                      articles.data.filter((a) => a.slug === selected)[0]
-                    }
+                    article={filtered.filter((a) => a.slug === selected)[0]}
                     focusGroup={2}
                   />
                 )}
 
-                {idx < articles.data.length &&
-                  selected === articles.data[idx].slug && (
-                    <FocusCard article={articles.data[idx]} focusGroup={1} />
-                  )}
+                {idx < filtered.length && selected === filtered[idx].slug && (
+                  <FocusCard article={filtered[idx]} focusGroup={1} />
+                )}
               </React.Fragment>
             ))}
         </div>

@@ -24,7 +24,6 @@ main .filters-group .categories .categ {
 
   color: #ffffffcc;
   font-size: var(--body-s-font-size);
-  /* font-weight: 500; */
 
   cursor: pointer;
   transition: 0.3s;
@@ -34,4 +33,5 @@ main .filters-group .categories .categ.active {
   color: #091426;
   background-color: white;
   border-color: white;
+  /* font-weight: bold; */
 }
