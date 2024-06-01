@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import "./index.css";
 
 import { Link } from "react-router-dom";
@@ -7,16 +7,20 @@ import { Link } from "react-router-dom";
 import icon_facebook from "./../../assets/images/icons/facebook.svg";
 import icon_twitter from "./../../assets/images/icons/twitter.svg";
 import { DateFormatter } from "../../utils/date-formatter";
+import { InteractivePath } from "../../utils/interactive-path";
+import { fetchFeatured } from "./../../redux/modules/featured";
 
 function CarouselHero() {
+  const dispatch = useDispatch();
   const articles = useSelector((state) => state.articles);
+  const featured = useSelector((state) => state.featured);
 
   const [panelIndex, setPanelIndex] = useState(0);
   const container = useRef(null);
   const panels = useRef([]);
 
   useEffect(() => {
-    if (articles.isReady) {
+    if (articles.isReady && featured.isReady) {
       if (container) {
         let cur = panels.current[panelIndex];
         let panel_bcr = cur.getBoundingClientRect();
@@ -28,19 +32,27 @@ function CarouselHero() {
       }
 
       const interval = setInterval(() => {
-        setPanelIndex((prev) => (prev + 1 >= 3 ? 0 : prev + 1));
+        setPanelIndex((prev) =>
+          prev + 1 >= 1 + featured.data.length ? 0 : prev + 1
+        );
       }, 5000);
 
       return () => clearInterval(interval);
     }
-  }, [articles, panelIndex]);
+  }, [articles, featured, panelIndex]);
+
+  useEffect(() => {
+    dispatch(fetchFeatured());
+  }, []);
 
   return (
     <div id="hero">
       <div className="articles snap" ref={container}>
         {articles.isReady &&
-          [...Array(3)].map((_, idx) => {
-            let article = articles.data[idx];
+          featured.isReady &&
+          [...Array(1 + featured.data.length)].map((_, idx) => {
+            let article =
+              idx == 0 ? articles.data[idx] : featured.data[idx - 1];
 
             return (
               <div
@@ -75,7 +87,7 @@ function CarouselHero() {
                   <div className="links">
                     <Link
                       className="view"
-                      to={`https://interactive.theguidon.com${article.path}`}
+                      to={InteractivePath(article.path)}
                       target="_blank"
                     >
                       View Interactive
@@ -83,13 +95,17 @@ function CarouselHero() {
 
                     <div className="socials">
                       <Link
-                        to={`http://www.facebook.com/sharer.php?u=https://interactive.theguidon.com${article.path}`}
+                        to={`http://www.facebook.com/sharer.php?u=${InteractivePath(
+                          article.path
+                        )}`}
                         target="_blank"
                       >
                         <img src={icon_facebook} alt="Share on Facebook" />
                       </Link>
                       <Link
-                        to={`http://x.com/share?url=https://interactive.theguidon.com${article.path}&text=${article.title}`}
+                        to={`http://x.com/share?url=${InteractivePath(
+                          article.path
+                        )}&text=${article.title}`}
                         target="_blank"
                       >
                         <img src={icon_twitter} alt="Share on Twitter" />
@@ -104,7 +120,8 @@ function CarouselHero() {
 
       <div className="buttons">
         {articles.isReady &&
-          [...Array(3)].map((_, idx) => (
+          featured.isReady &&
+          [...Array(1 + featured.data.length)].map((_, idx) => (
             <button
               className={`circle ${idx == panelIndex ? "active" : ""}`}
               key={`btn-${idx}`}

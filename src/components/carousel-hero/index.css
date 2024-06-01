@@ -13,7 +13,8 @@
 #home #hero .articles {
   flex-grow: 1;
   display: grid;
-  grid-template-columns: repeat(3, 100%);
+  grid-auto-flow: column;
+  grid-auto-columns: 100%;
   align-items: end;
   height: 100%;
 

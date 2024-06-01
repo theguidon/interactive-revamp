@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import icon_facebook from "./../../assets/images/icons/facebook.svg";
 import icon_twitter from "./../../assets/images/icons/twitter.svg";
 import { DateFormatter } from "../../utils/date-formatter";
+import { InteractivePath } from "../../utils/interactive-path";
 
 function FocusCard(props) {
   return (
@@ -28,7 +29,7 @@ function FocusCard(props) {
               <div className="buttons">
                 <Link
                   className="view"
-                  to={`https://interactive.theguidon.com${props.article.path}`}
+                  to={InteractivePath(props.article.path)}
                   target="_blank"
                 >
                   View Interactive
@@ -39,13 +40,17 @@ function FocusCard(props) {
 
               <div className="socials">
                 <Link
-                  to={`http://www.facebook.com/sharer.php?u=https://interactive.theguidon.com${props.article.path}`}
+                  to={`http://www.facebook.com/sharer.php?u=${InteractivePath(
+                    props.article.path
+                  )}`}
                   target="_blank"
                 >
                   <img src={icon_facebook} alt="Share on Facebook" />
                 </Link>
                 <Link
-                  to={`http://x.com/share?url=https://interactive.theguidon.com${props.article.path}&text=${props.article.title}`}
+                  to={`http://x.com/share?url=${InteractivePath(
+                    props.article.path
+                  )}&text=${props.article.title}`}
                   target="_blank"
                 >
                   <img src={icon_twitter} alt="Share on Twitter" />

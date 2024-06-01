@@ -1,15 +1,15 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 // Action
-export const fetchArticles = createAsyncThunk("fetchArticles", async () => {
+export const fetchFeatured = createAsyncThunk("fetchFeatured", async () => {
   const response = await fetch(
-    "https://api.theguidon.com/interactive/wp-json/api/v1/interactives"
+    "https://api.theguidon.com/interactive/wp-json/api/v1/featured"
   );
   return response.json();
 });
 
-const articlesSlice = createSlice({
-  name: "articles",
+const featuredSlice = createSlice({
+  name: "featured",
   initialState: {
     isLoading: true,
     isError: false,
@@ -17,19 +17,19 @@ const articlesSlice = createSlice({
     data: null,
   },
   extraReducers: (builder) => {
-    builder.addCase(fetchArticles.pending, (state, action) => {
+    builder.addCase(fetchFeatured.pending, (state, action) => {
       state.isLoading = true;
     });
-    builder.addCase(fetchArticles.fulfilled, (state, action) => {
+    builder.addCase(fetchFeatured.fulfilled, (state, action) => {
       state.isLoading = false;
       state.data = action.payload;
       state.isReady = true;
     });
-    builder.addCase(fetchArticles.rejected, (state, action) => {
+    builder.addCase(fetchFeatured.rejected, (state, action) => {
       console.error(action.payload);
       state.isError = true;
     });
   },
 });
 
-export default articlesSlice.reducer;
+export default featuredSlice.reducer;

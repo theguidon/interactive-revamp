@@ -4,7 +4,7 @@ import "./index.css";
 import FocusCard from "../../components/focus-card";
 import CarouselHero from "../../components/carousel-hero";
 import ArticleCard from "../../components/article-card";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 function MainPage() {
   const articles = useSelector((state) => state.articles);
@@ -28,7 +28,7 @@ function MainPage() {
 
       <main className="general-container">
         <div className="articles-grid">
-          {articles.isReady ? (
+          {articles.isReady &&
             articles.data.map((article, idx) => (
               <React.Fragment key={`article-${article.slug}`}>
                 <ArticleCard
@@ -62,10 +62,7 @@ function MainPage() {
                   <FocusCard article={article} focusGroup={1} />
                 )}
               </React.Fragment>
-            ))
-          ) : (
-            <></>
-          )}
+            ))}
         </div>
       </main>
     </div>
