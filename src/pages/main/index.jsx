@@ -121,7 +121,11 @@ function MainPage() {
         <div className="articles-grid">
           {articles.isReady &&
             [...Array(ceilCount())].map((_, idx) => (
-              <React.Fragment key={`article-${idx}`}>
+              <React.Fragment
+                key={`article-${
+                  idx < filtered.length ? filtered[idx].slug : "filler-" + idx
+                }`}
+              >
                 {idx < filtered.length && (
                   <ArticleCard
                     article={filtered[idx]}
