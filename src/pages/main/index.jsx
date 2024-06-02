@@ -14,6 +14,8 @@ function MainPage() {
   const [categories, setCategories] = useState({});
   const [search, setSearch] = useState("");
 
+  const [showModal, setShowModal] = useState(false);
+
   const getGroupSlugs = (idx, count) => {
     let minIdx = Math.floor(idx / count) * count;
     let maxIdx = (Math.floor(idx / count) + 1) * count;
@@ -175,6 +177,9 @@ function MainPage() {
 
                 {idx % 3 == 2 && getGroupSlugs(idx, 3).includes(selected) && (
                   <FocusCard
+                    showModal={() => {
+                      setShowModal(true);
+                    }}
                     article={filtered.filter((a) => a.slug === selected)[0]}
                     focusGroup={3}
                   />
@@ -182,18 +187,80 @@ function MainPage() {
 
                 {idx % 2 == 1 && getGroupSlugs(idx, 2).includes(selected) && (
                   <FocusCard
+                    showModal={() => {
+                      setShowModal(true);
+                    }}
                     article={filtered.filter((a) => a.slug === selected)[0]}
                     focusGroup={2}
                   />
                 )}
 
                 {idx < filtered.length && selected === filtered[idx].slug && (
-                  <FocusCard article={filtered[idx]} focusGroup={1} />
+                  <FocusCard
+                    showModal={() => {
+                      setShowModal(true);
+                    }}
+                    article={filtered[idx]}
+                    focusGroup={1}
+                  />
                 )}
               </React.Fragment>
             ))}
         </div>
       </main>
+
+      {selected &&
+        filtered
+          .filter((a) => a.slug === selected)
+          .map((article) => (
+            <div
+              className={`credits-bg ${showModal ? "active" : ""}`}
+              key={`credits-mobile-${article.slug}`}
+            >
+              <div
+                className="bg"
+                onClick={() => {
+                  setShowModal(false);
+                }}
+              />
+
+              <div className="modal">
+                <svg
+                  className="close"
+                  onClick={() => {
+                    setShowModal(false);
+                  }}
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 14 14"
+                  fill="none"
+                >
+                  <path
+                    d="M2.21289 2L12.1703 11.9574"
+                    stroke="white"
+                    stroke-width="2.75875"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M2.16992 12L12.1273 2.04263"
+                    stroke="white"
+                    stroke-width="2.75875"
+                    stroke-linecap="round"
+                  />
+                </svg>
+
+                <h3 className="title">{article.title}</h3>
+
+                <div className="bylines">
+                  {article.bylines.map((row, idx) => (
+                    <React.Fragment key={`bylines-row-${idx}`}>
+                      <p className="key">{row.key}</p>
+                      <p className="value">{row.value}</p>
+                    </React.Fragment>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
     </div>
   );
 }

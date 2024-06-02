@@ -35,7 +35,14 @@ function FocusCard(props) {
                   View Interactive
                 </Link>
 
-                {/* <button className="show-credits">Show Credits</button> */}
+                <button
+                  className="show-credits"
+                  onClick={() => {
+                    props.showModal(true);
+                  }}
+                >
+                  Show Credits
+                </button>
               </div>
 
               <div className="socials">
@@ -65,7 +72,7 @@ function FocusCard(props) {
                 <p className="value">{row.value}</p>
               </React.Fragment>
             ))}
-          </div>{" "}
+          </div>
         </>
       )}
     </div>
