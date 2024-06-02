@@ -35,7 +35,7 @@ function FocusCard(props) {
                   View Interactive
                 </Link>
 
-                <button className="show-credits">Show Credits</button>
+                {/* <button className="show-credits">Show Credits</button> */}
               </div>
 
               <div className="socials">
