@@ -73,7 +73,7 @@
 }
 
 #about #explore {
-  padding: 64px 16px;
+  padding: 128px 24px;
   background-size: cover !important;
   background-position: center !important;
   margin: 0 0 64px;
@@ -98,6 +98,10 @@
   font-weight: bold;
   text-decoration: none;
   text-align: center;
+}
+
+#about #explore .explore:hover {
+  background-color: #1da265;
 }
 
 #about #guidon {
@@ -141,6 +145,7 @@
   }
 
   #about #explore {
+    padding: 112px 24px;
     margin: 0 0 56px;
   }
 }
@@ -165,6 +170,7 @@
   }
 
   #about #explore {
+    padding: 96px 24px;
     margin: 0 0 48px;
   }
 }
@@ -188,6 +194,7 @@
   }
 
   #about #explore {
+    padding: 80px 24px;
     margin: 0 0 40px;
   }
 }
@@ -220,6 +227,7 @@
   }
 
   #about #explore {
+    padding: 64px 24px;
     margin: 0 0 32px;
   }
 
