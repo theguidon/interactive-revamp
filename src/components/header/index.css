@@ -88,6 +88,13 @@ header nav a.active {
   header {
     padding: 16px 0;
     height: unset;
+
+    background: linear-gradient(
+      0deg,
+      #00000000 0%,
+      #00000099 40%,
+      #000000ff 150%
+    );
   }
 
   header .general-container {
