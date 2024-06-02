@@ -162,6 +162,12 @@
   padding: 8px 80px;
   background-color: var(--dd-green);
   border-radius: 40px;
+
+  transition: 0.3s;
+}
+
+#home #hero .articles .panel .links .view:hover {
+  background-color: #1da265;
 }
 
 #home #hero .articles .panel .links .socials {

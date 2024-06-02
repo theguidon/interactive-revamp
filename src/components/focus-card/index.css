@@ -93,6 +93,13 @@
   background-color: var(--dd-green);
   border: 1px solid var(--dd-green);
   border-radius: 40px;
+
+  transition: 0.3s;
+}
+
+.focus-card .content .links .view:hover {
+  background-color: #1da265;
+  border-color: #1da265;
 }
 
 .focus-card .content .links .show-credits {
