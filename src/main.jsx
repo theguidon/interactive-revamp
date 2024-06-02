@@ -10,7 +10,7 @@ import { store } from "./redux/store";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <BrowserRouter basename="/interactive-revamp">
+    <BrowserRouter>
       <Provider store={store}>
         <App />
       </Provider>

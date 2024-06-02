@@ -5,5 +5,6 @@ import react from "@vitejs/plugin-react-swc";
 export default defineConfig({
   plugins: [react()],
   // TODO change to "/" when deploying to production
-  base: "/interactive-revamp/",
+  base: "/",
+  // base: "/interactive-revamp/",
 });
