@@ -67,7 +67,7 @@ function CarouselHero() {
                 <div className="gradient-tint" />
 
                 <div className="general-container">
-                  <p className="featured">Featured</p>
+                  <p className="featured">{idx == 0 ? "Latest" : "Featured"}</p>
                   <h1 className="title">{article.title}</h1>
 
                   <p className="date">
