@@ -117,7 +117,15 @@ function MainPage() {
                   }`}
                   onClick={() => {
                     let nf = { ...categories };
-                    nf[categ] = !nf[categ];
+
+                    if (allCategsEnabled()) {
+                      Object.keys(nf).forEach((key) => {
+                        nf[key] = false;
+                      });
+                      nf[categ] = true;
+                    } else {
+                      nf[categ] = !nf[categ];
+                    }
 
                     setCategories(nf);
                   }}
